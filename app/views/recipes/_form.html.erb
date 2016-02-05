@@ -7,7 +7,7 @@
 <%= f.label :time_prepare, 'Tempo de Preparo' %>
 <%= f.text_field :time_prepare %>
 <%= f.label :difficult, 'Dificuldade' %>
-<%= select_tag(:difficult, options_for_select(@difficulties)) %>
+<%= f.select(:difficult, @difficulties.map {|value| [value,value]}, include_blank: 'Selecione')%>
 <%= f.label :food_type_id, 'Tipo' %>
 <%= f.collection_select :food_type_id, @food_types, :id,:name, include_blank: 'Selecione' %>
 <%= f.label :food_preference_id, 'Preferência' %>

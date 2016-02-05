@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
     @food_types = FoodType.all
     @food_preferences = FoodPreference.all
     @kitchens = Kitchen.all
-    @difficulties = [['Fácil'],['Médio'],['Difícil']]
+    @difficulties = ['Facil','Medio','Dificil']
   end
 
   def set_recipe
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe)
           .permit(:name,:number_people,:time_prepare,:difficult,:ingredients,
-                  :description,:food_type_id,:food_preference,:kitchen)
+                  :description,:food_type_id,:food_preference_id,:kitchen_id)
   end
 
 end

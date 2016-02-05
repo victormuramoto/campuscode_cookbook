@@ -1,7 +1,11 @@
 require 'rails_helper'
   feature 'User creates a recipe' do
     scenario 'success' do
-      recipe = build(:recipe)
+
+      recipe = build(:recipe,
+                     food_preference: create(:food_preference),
+                     food_type:create(:food_type),
+                     kitchen:create(:kitchen))
 
       visit new_recipe_path
 
@@ -10,10 +14,10 @@ require 'rails_helper'
       fill_in 'recipe[time_prepare]', with: recipe.time_prepare
       fill_in 'recipe[ingredients]', with: recipe.ingredients
       fill_in 'recipe[description]', with: recipe.description
-      select  recipe.difficult, from:'recipe[recipe[difficult]]'
-      select  recipe.food_type.name, from:'recipe[recipe[food_type_id]]'
-      select  recipe.food_preference.name, from:'recipe[recipe[food_preference_id]]'
-      select  recipe.kitchen.name, from:'recipe[recipe[kitchen_id]]'
+      select  recipe.difficult, from:'recipe[difficult]'
+      select  recipe.food_type.name, from:'recipe[food_type_id]'
+      select  recipe.food_preference.name, from:'recipe[food_preference_id]'
+      select  recipe.kitchen.name, from:'recipe[kitchen_id]'
 
       click_on  'submit'
 

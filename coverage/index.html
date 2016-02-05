@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-05T18:25:51-02:00">2016-02-05T18:25:51-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-05T20:55:48-02:00">2016-02-05T20:55:48-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">82.35%</span></span>
+    (<span class="covered_percent"><span class="green">97.06%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.81
+       <span class="yellow">
+         1.0
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>7</b> files in total.
     <b>34</b> relevant lines. 
-    <span class="green"><b>28</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed </span>
+    <span class="green"><b>33</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#1d75f99b84883a54c9211d23a900efa3c5ff0578" class="src_link" title="app/controllers/recipes_controller.rb">app/controllers/recipes_controller.rb</a></td>
-        <td class="red strong">71.43 %</td>
+        <td class="green strong">95.24 %</td>
         <td>40</td>
         <td>21</td>
-        <td>15</td>
-        <td>6</td>
-        <td>0.7</td>
+        <td>20</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -129,11 +129,11 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">73.91%</span></span>
+    (<span class="covered_percent"><span class="green">95.65%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.73
+       <span class="yellow">
+         1.0
        </span>
     </span> hits/line)
   </h2>
@@ -141,8 +141,8 @@
   <div>
     <b>2</b> files in total.
     <b>23</b> relevant lines. 
-    <span class="green"><b>17</b> lines covered</span> and
-    <span class="red"><b>6</b> lines missed </span>
+    <span class="green"><b>22</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -170,12 +170,12 @@
       
       <tr>
         <td class="strong"><a href="#1d75f99b84883a54c9211d23a900efa3c5ff0578" class="src_link" title="app/controllers/recipes_controller.rb">app/controllers/recipes_controller.rb</a></td>
-        <td class="red strong">71.43 %</td>
+        <td class="green strong">95.24 %</td>
         <td>40</td>
         <td>21</td>
-        <td>15</td>
-        <td>6</td>
-        <td>0.7</td>
+        <td>20</td>
+        <td>1</td>
+        <td>1.0</td>
       </tr>
       
     </tbody>
@@ -442,11 +442,11 @@
         <div class="source_table" id="1d75f99b84883a54c9211d23a900efa3c5ff0578">
   <div class="header">
     <h3>app/controllers/recipes_controller.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h4><span class="green">95.24 %</span> covered</h4>
     <div>
       <b>21</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -525,20 +525,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
           <code class="ruby">    @recipe = Recipe.new(recipe_params)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
           <code class="ruby">    if @recipe.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
           <code class="ruby">      redirect_to @recipe</code>
         </li>
@@ -612,7 +612,7 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">    @difficulties = [[&#39;Fácil&#39;],[&#39;Médio&#39;],[&#39;Difícil&#39;]]</code>
+          <code class="ruby">    @difficulties = [&#39;Facil&#39;,&#39;Medio&#39;,&#39;Dificil&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -633,8 +633,8 @@
           <code class="ruby">  def set_recipe</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
-          
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
           <code class="ruby">    @recipe = Recipe.find(params[:id])</code>
         </li>
@@ -663,8 +663,8 @@
           <code class="ruby">    params.require(:recipe)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
           <code class="ruby">          .permit(:name,:number_people,:time_prepare,:difficult,:ingredients,</code>
         </li>
@@ -672,7 +672,7 @@
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">                  :description,:food_type_id,:food_preference,:kitchen)</code>
+          <code class="ruby">                  :description,:food_type_id,:food_preference_id,:kitchen_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">

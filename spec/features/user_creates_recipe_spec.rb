@@ -10,10 +10,10 @@ require 'rails_helper'
       fill_in 'recipe[time_prepare]', with: recipe.time_prepare
       fill_in 'recipe[ingredients]', with: recipe.ingredients
       fill_in 'recipe[description]', with: recipe.description
-      select  recipe.company.name, from:'recipe[recipe[difficult]]'
-      select  recipe.company.name, from:'recipe[recipe[food_type_id]]'
-      select  recipe.company.name, from:'recipe[recipe[food_preference_id]]'
-      select  recipe.company.name, from:'recipe[recipe[kitchen_id]]'
+      select  recipe.difficult, from:'recipe[recipe[difficult]]'
+      select  recipe.food_type.name, from:'recipe[recipe[food_type_id]]'
+      select  recipe.food_preference.name, from:'recipe[recipe[food_preference_id]]'
+      select  recipe.kitchen.name, from:'recipe[recipe[kitchen_id]]'
 
       click_on  'submit'
 

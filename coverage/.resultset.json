@@ -42,10 +42,6 @@
         1,
         1,
         1,
-        1,
-        null,
-        0,
-        null,
         null,
         null,
         1,
@@ -72,11 +68,26 @@
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/application_controller.rb": [
         1,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null,
         1,
         null
+      ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/lib/application_responder.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1454712948
+    "timestamp": 1454713792
   }
 }

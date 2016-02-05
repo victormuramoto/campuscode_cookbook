@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only:[:show]
-  before_action :set_collections, only:[:new]
+  before_action :set_recipe, only: [:show]
+  before_action :set_collections, only: [:new]
 
   def show
   end
@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
     @food_types = FoodType.all
     @food_preferences = FoodPreference.all
     @kitchens = Kitchen.all
-    @difficulties = ['Facil','Medio','Dificil']
+    @difficulties = %w(Facil Medio Dificil)
   end
 
   def set_recipe
@@ -29,8 +29,8 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe)
-          .permit(:name,:number_people,:time_prepare,:difficult,:ingredients,
-                  :description,:food_type_id,:food_preference_id,:kitchen_id)
+          .permit(:name, :number_people, :time_prepare, :difficult,
+                  :ingredients, :description, :food_type_id,
+                  :food_preference_id, :kitchen_id)
   end
-
 end

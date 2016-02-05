@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 group :development, :test do
+  gem 'rubocop', '~> 0.37.0', require: false
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.0'

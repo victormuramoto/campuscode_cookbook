@@ -30,4 +30,23 @@ feature 'User creates a recipe' do
     expect(page).to have_content recipe.food_preference.name
     expect(page).to have_content recipe.kitchen.name
   end
+  scenario 'invalid data' do
+    recipe = build(:recipe,
+                   food_preference: create(:food_preference),
+                   food_type: create(:food_type),
+                   kitchen: create(:kitchen))
+
+    visit new_recipe_path
+
+    fill_in 'recipe[number_people]', with: recipe.number_people
+    within '#recipe_food_type_id' do find("option[value='']").click end
+    within '#recipe_food_preference_id' do find("option[value='']").click end
+    within '#recipe_kitchen_id' do find("option[value='']").click end
+    fill_in 'recipe[time_prepare]', with: recipe.time_prepare
+    select  recipe.difficult, from: 'recipe[difficult]'
+
+    click_on 'submit'
+
+    expect(page).to have_content 'Warning: The fields cannot be blank'
+  end
 end

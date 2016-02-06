@@ -1,0 +1,7 @@
+<span class="error_message"><%= flash[:alert] %></span>
+<%= form_for @food_preference do |f| %>
+<%= f.label :name, t('food_preference.fields.food_preference_name') + ':' %>
+<%= f.text_field :name %>
+
+<%= f.submit button_label,id:'submit' %>
+<% end %>

@@ -9,6 +9,9 @@ en:
     food_types:
       create:
         alert: 'Warning: The fields cannot be blank'
+    food_preferences:
+      create:
+        alert: 'Warning: The fields cannot be blank'
     actions:
       create:
         notice: '%{resource_name} was successfully created.'

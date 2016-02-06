@@ -9,6 +9,9 @@ pt-BR:
     food_types:
       create:
         alert: 'Cuidado! Todos os campos devem ser preenchidos'
+    food_preferences:
+      create:
+        alert: 'Cuidado! Todos os campos devem ser preenchidos'
     actions:
       create:
         notice: '%{resource_name} foi criado com sucesso.'

@@ -1,0 +1,9 @@
+---
+pt-BR:
+  food_preference:
+      fields:
+        food_preference_name: 'Preferência de Comida'
+      buttons:
+        create_food_preference: 'Criar Preferência de Comida'
+      titles:
+        new_food_preference: 'Nova Preferência de Comida'

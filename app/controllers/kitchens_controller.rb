@@ -16,7 +16,6 @@ class KitchensController < ApplicationController
 
   private
 
-
   def set_kitchen
     @kitchen = Kitchen.find(params[:id])
   end

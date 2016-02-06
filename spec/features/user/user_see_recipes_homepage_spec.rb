@@ -21,10 +21,10 @@ feature 'User see recipes in homepage' do
 
   scenario 'success with image' do
     recipe1 = create(:recipe, image: File.new(
-                                              Rails.root + 'app/assets/images/strogonoff.jpg'))
+      Rails.root + 'app/assets/images/strogonoff.jpg'))
     recipe2 = create(:recipe,
                      image: File.new(
-                                     Rails.root + 'app/assets/images/strogonoff.jpg'))
+                       Rails.root + 'app/assets/images/strogonoff.jpg'))
     visit root_path
 
     expect(page).to have_content recipe1.name

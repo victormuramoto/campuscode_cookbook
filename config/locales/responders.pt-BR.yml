@@ -1,5 +1,8 @@
 pt-BR:
   flash:
+    recipes:
+      create:
+        alert: 'Cuidado! Alguns campos não podem ficar em branco'
     actions:
       create:
         notice: '%{resource_name} foi criado com sucesso.'

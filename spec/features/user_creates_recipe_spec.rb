@@ -47,6 +47,6 @@ feature 'User creates a recipe' do
 
     click_on 'submit'
 
-    expect(page).to have_content 'Warning: The fields cannot be blank'
+    expect(page).to have_content 'Cuidado! Alguns campos não podem ficar em branco'
   end
 end

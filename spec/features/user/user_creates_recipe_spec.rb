@@ -1,6 +1,6 @@
 require 'rails_helper'
 feature 'User creates a recipe' do
-  scenario 'success withour image' do
+  scenario 'success without image' do
     recipe = build(:recipe,
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),

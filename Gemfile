@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
 gem 'responders'

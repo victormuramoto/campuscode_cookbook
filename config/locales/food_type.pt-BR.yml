@@ -1,0 +1,9 @@
+---
+pt-BR:
+  food_type:
+      fields:
+        food_type_name: 'Tipo de Comida'
+      buttons:
+        create_food_type: 'Criar Tipo de Comida'
+      titles:
+        new_food_type: 'Novo Tipo de Comida'

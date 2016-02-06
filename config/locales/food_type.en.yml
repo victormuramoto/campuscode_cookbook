@@ -1,0 +1,9 @@
+---
+en:
+  food_type:
+      fields:
+        food_type_name: 'Type:'
+      buttons:
+        create_food_type: 'Created Food Type'
+      titles:
+        new_food_type: 'New Food Type'

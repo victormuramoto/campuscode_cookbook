@@ -6,6 +6,9 @@ pt-BR:
     kitchens:
       create:
         alert: 'Cuidado! Todos os campos devem ser preenchidos'
+    food_types:
+      create:
+        alert: 'Cuidado! Todos os campos devem ser preenchidos'
     actions:
       create:
         notice: '%{resource_name} foi criado com sucesso.'

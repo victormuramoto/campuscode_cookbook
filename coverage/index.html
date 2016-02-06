@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-06T16:49:31-02:00">2016-02-06T16:49:31-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-06T17:53:17-02:00">2016-02-06T17:53:17-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.92
+         1.98
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>9</b> files in total.
-    <b>46</b> relevant lines. 
-    <span class="green"><b>46</b> lines covered</span> and
+    <b>10</b> files in total.
+    <b>48</b> relevant lines. 
+    <span class="green"><b>48</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -86,6 +86,16 @@
         <td>2</td>
         <td>1</td>
         <td>1</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#ddbe3f2d04377ee234c9d0ae506b45a9585cf681" class="src_link" title="app/models/admin.rb">app/models/admin.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>6</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -153,7 +163,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.42
+         2.56
        </span>
     </span> hits/line)
   </h2>
@@ -185,7 +195,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -195,7 +205,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>1.3</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -226,9 +236,9 @@
   </h2>
   <a name="Models"></a>
   <div>
-    <b>4</b> files in total.
-    <b>12</b> relevant lines. 
-    <span class="green"><b>12</b> lines covered</span> and
+    <b>5</b> files in total.
+    <b>14</b> relevant lines. 
+    <span class="green"><b>14</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -244,6 +254,16 @@
       </tr>
     </thead>
     <tbody>
+      
+      <tr>
+        <td class="strong"><a href="#ddbe3f2d04377ee234c9d0ae506b45a9585cf681" class="src_link" title="app/models/admin.rb">app/models/admin.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>6</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
       
       <tr>
         <td class="strong"><a href="#7d7a19712cdf4870d597343a14e6c24074b00421" class="src_link" title="app/models/food_preference.rb">app/models/food_preference.rb</a></td>
@@ -493,8 +513,8 @@
           <code class="ruby">  def set_locale</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="9">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="15" data-linenumber="9">
+          <span class="hits">15</span>
           
           <code class="ruby">    I18n.locale = params[:locale] || I18n.default_locale</code>
         </li>
@@ -565,8 +585,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="4">
+          <span class="hits">3</span>
           
           <code class="ruby">    @recipes = Recipe.all</code>
         </li>
@@ -842,6 +862,60 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="ddbe3f2d04377ee234c9d0ae506b45a9585cf681">
+  <div class="header">
+    <h3>app/models/admin.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Admin &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  # Include default devise modules. Others available are:</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">  # :confirmable, :lockable, :timeoutable and :omniauthable</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  devise :database_authenticatable, :registerable,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">         :recoverable, :rememberable, :trackable, :validatable</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">end</code>

@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        15,
+        18,
         null,
         null,
         null,
@@ -61,6 +61,35 @@
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/kitchen.rb": [
         1,
         1,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/kitchens_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_preference.rb": [
@@ -112,6 +141,6 @@
         null
       ]
     },
-    "timestamp": 1454788397
+    "timestamp": 1454790259
   }
 }

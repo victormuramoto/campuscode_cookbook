@@ -1,0 +1,9 @@
+---
+en:
+  kitchen:
+      fields:
+        kitchen_name: 'Cuisine'
+      buttons:
+        create_kitchen: 'Create Cuisine'
+      titles:
+        new_kitchen: 'New Cuisine'

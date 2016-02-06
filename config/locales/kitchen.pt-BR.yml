@@ -1,0 +1,9 @@
+---
+pt-BR:
+  kitchen:
+      fields:
+        kitchen_name: 'Cozinha'
+      buttons:
+        create_kitchen: 'Criar Cozinha'
+      titles:
+        new_kitchen: 'Nova Cozinha'

@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        25,
+        31,
         null,
         null,
         null,
@@ -43,7 +43,7 @@
         1,
         null,
         1,
-        4,
+        6,
         null,
         null
       ],
@@ -56,6 +56,11 @@
         null,
         1,
         null,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_type.rb": [
+        1,
+        1,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/kitchen.rb": [
@@ -94,11 +99,6 @@
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_preference.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_type.rb": [
         1,
         1,
         null
@@ -142,6 +142,6 @@
         null
       ]
     },
-    "timestamp": 1454792726
+    "timestamp": 1454794759
   }
 }

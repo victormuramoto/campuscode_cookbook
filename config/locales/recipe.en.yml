@@ -1,0 +1,18 @@
+---
+en:
+  recipes:
+      fields:
+        recipe_name: 'Recipe'
+        number_people: 'Servings'
+        people: 'People'
+        time_prepare: 'Time to Prepare'
+        difficult: 'Difficult'
+        food_type: 'Type'
+        food_preference: 'Preference'
+        kitchen: 'Cuisine'
+        ingredients: 'Ingredients'
+        description: 'Instructions'
+      buttons:
+        create_recipe: 'Create Recipe'
+      titles:
+        new_recipe: 'New Recipe'

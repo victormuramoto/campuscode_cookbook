@@ -1,9 +1,9 @@
-Receita: <%= @recipe.name %>
-Serve para: <%= @recipe.number_people %> Pessoa(s)
-Tempo de preparo: <%= @recipe.time_prepare %>
-Dificuldade: <%= @recipe.difficult %>
-Tipo: <%= @recipe.food_type.name %>
-Prefêrencia: <%= @recipe.food_preference.name %>
-Cozinha: <%= @recipe.kitchen.name %>
-Ingredientes:  <%= @recipe.ingredients %>
-Preparo: <%= @recipe.description %>
+<p><%= t('recipes.fields.recipe_name') %>: <%= @recipe.name %></p>
+<p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> Pessoa(s)</p>
+<p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
+<p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
+<p><%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %></p>
+<p><%= t('recipes.fields.food_preference') %>: <%= @recipe.food_preference.name %></p>
+<p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
+<p><%= t('recipes.fields.ingredients') %>:</p>  <p><%= @recipe.ingredients %></p>
+<p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>

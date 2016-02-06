@@ -1,22 +1,23 @@
 <span class="error_message"><%= flash[:alert] %></span>
 <%= form_for @recipe do |f| %>
-<%= f.label :name, 'Nome' %>
+<%= f.label :name, t('recipes.fields.recipe_name') + ':' %>
 <%= f.text_field :name %>
-<%= f.label :number_people, 'Pessoas:' %>
-<%= f.text_field :number_people %>
-<%= f.label :time_prepare, 'Tempo de Preparo' %>
+<%= f.label :number_people, t('recipes.fields.number_people') + ':' %>
+<%= f.text_field :number_people%>
+<%= t('recipes.fields.people') %>
+<%= f.label :time_prepare, t('recipes.fields.time_prepare') + ':' %>
 <%= f.text_field :time_prepare %>
-<%= f.label :difficult, 'Dificuldade' %>
+<%= f.label :difficult, t('recipes.fields.difficult') + ':' %>
 <%= f.select(:difficult, @difficulties.map {|value| [value,value]}, include_blank: 'Selecione')%>
-<%= f.label :food_type_id, 'Tipo' %>
+<%= f.label :food_type_id, t('recipes.fields.food_type') + ':' %>
 <%= f.collection_select :food_type_id, @food_types, :id,:name, include_blank: 'Selecione' %>
-<%= f.label :food_preference_id, 'Preferência' %>
+<%= f.label :food_preference_id, t('recipes.fields.food_preference') + ':' %>
 <%= f.collection_select :food_preference_id, @food_preferences, :id, :name, include_blank: 'Selecione' %>
-<%= f.label :kitchen_id, 'Cozinha' %>
+<%= f.label :kitchen_id, t('recipes.fields.kitchen') + ':' %>
 <%= f.collection_select :kitchen_id, @kitchens , :id,:name, include_blank: 'Selecione' %>
-<%= f.label :ingredients, 'Ingredientes' %>
+<%= f.label :ingredients, t('recipes.fields.ingredients') + ':' %>
 <%= f.text_area :ingredients %>
-<%= f.label :description, 'Preparo' %>
+<%= f.label :description, t('recipes.fields.description') + ':' %>
 <%= f.text_area :description %>
 
 

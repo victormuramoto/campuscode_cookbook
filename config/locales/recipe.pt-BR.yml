@@ -1,0 +1,18 @@
+---
+pt-BR:
+  recipes:
+      fields:
+        recipe_name: 'Receita'
+        number_people: 'Serve'
+        people: 'Pessoa(s)'
+        time_prepare: 'Tempo de Preparo'
+        difficult: 'Dificuldade'
+        food_type: 'Tipo'
+        food_preference: 'Preferẽncia'
+        kitchen: 'Cozinha'
+        ingredients: 'Ingredientes'
+        description: 'Preparo'
+      buttons:
+        create_recipe: 'Criar Receita'
+      titles:
+        new_recipe: 'Nova Receita'

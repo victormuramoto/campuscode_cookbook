@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        26,
+        25,
         null,
         null,
         null,
@@ -61,6 +61,7 @@
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/kitchen.rb": [
         1,
         1,
+        1,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/kitchens_controller.rb": [
@@ -84,7 +85,7 @@
         null,
         null,
         1,
-        2,
+        1,
         null,
         null,
         1,
@@ -141,6 +142,6 @@
         null
       ]
     },
-    "timestamp": 1454792645
+    "timestamp": 1454792726
   }
 }

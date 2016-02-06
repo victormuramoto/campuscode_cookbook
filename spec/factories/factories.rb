@@ -28,4 +28,17 @@ FactoryGirl.define do
     food_preference
     kitchen
   end
+FactoryGirl.define do
+  factory :other_recipe do
+    name 'Crepe de nutella'
+    number_people 1
+    time_prepare  10
+    difficult 'Facil'
+    ingredients 'Nutella Farinha e ovo'
+    description 'jogue tudo na panela e vire'
+    food_type
+    food_preference
+    kitchen
+  end
+end
 end

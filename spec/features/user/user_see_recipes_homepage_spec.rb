@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'User sse recipes in homepage' do
+feature 'User see recipes in homepage' do
   scenario 'success' do
     recipe1 = create(:recipe)
     recipe2 = create(:recipe)
@@ -41,5 +41,4 @@ feature 'User sse recipes in homepage' do
     expect(page).to have_content recipe2.kitchen.name
     expect(page).to have_css("img[src*='image.jpg']")
   end
-
 end

@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show]
-  before_action :set_collections, only: [:new,:create]
+  before_action :set_collections, only: [:new, :create]
 
   def show
   end

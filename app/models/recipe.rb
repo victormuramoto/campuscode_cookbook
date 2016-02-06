@@ -4,5 +4,6 @@ class Recipe < ActiveRecord::Base
   belongs_to :food_preference
   belongs_to :kitchen
 
-  validates :name, :kitchen, :food_type, :food_preference, :ingredients, :description, presence:true
+  validates :name, :kitchen, :food_type,
+            :food_preference, :ingredients, :description, presence: true
 end

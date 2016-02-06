@@ -28,6 +28,7 @@
         1,
         null,
         1,
+        null,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/recipes_controller.rb": [
@@ -95,6 +96,6 @@
         null
       ]
     },
-    "timestamp": 1454737154
+    "timestamp": 1454779946
   }
 }

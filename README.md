@@ -1,4 +1,4 @@
-#PROJECT Social Recipes
+#PROJECT Cookbook
 
 
 DESCRIPTION

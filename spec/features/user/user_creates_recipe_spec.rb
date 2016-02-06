@@ -47,7 +47,8 @@ feature 'User creates a recipe' do
     select  recipe.food_type.name, from: 'recipe[food_type_id]'
     select  recipe.food_preference.name, from: 'recipe[food_preference_id]'
     select  recipe.kitchen.name, from: 'recipe[kitchen_id]'
-    page.attach_file('recipe[image]', Rails.root + 'app/assets/images/strogonoff.jpg')
+    page.attach_file('recipe[image]', Rails.root +
+                     'app/assets/images/strogonoff.jpg')
 
     click_on 'submit'
 
@@ -71,15 +72,20 @@ feature 'User creates a recipe' do
     visit new_recipe_path
 
     fill_in 'recipe[number_people]', with: recipe.number_people
-    within '#recipe_food_type_id' do find("option[value='']").click end
-    within '#recipe_food_preference_id' do find("option[value='']").click end
-    within '#recipe_kitchen_id' do find("option[value='']").click end
+    within '#recipe_food_type_id' do
+      find("option[value='']").click
+    end
+    within '#recipe_food_preference_id' do
+      find("option[value='']").click
+    end
+    within '#recipe_kitchen_id' do
+      find("option[value='']").click
+    end
     fill_in 'recipe[time_prepare]', with: recipe.time_prepare
     select  recipe.difficult, from: 'recipe[difficult]'
 
     click_on 'submit'
 
-    expect(page).to have_content 'Cuidado! Alguns campos não podem ficar em branco'
+    expect(page).to have_content t('flash.recipes.create.alert')
   end
-
 end

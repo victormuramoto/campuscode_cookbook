@@ -3,6 +3,9 @@ pt-BR:
     recipes:
       create:
         alert: 'Cuidado! Alguns campos não podem ficar em branco'
+    kitchens:
+      create:
+        alert: 'Cuidado! Todos os campos devem ser preenchidos'
     actions:
       create:
         notice: '%{resource_name} foi criado com sucesso.'

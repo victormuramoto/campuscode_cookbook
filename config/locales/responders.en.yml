@@ -3,6 +3,9 @@ en:
     recipes:
       create:
         alert: 'Warning: The fields cannot be blank'
+    kitchens:
+      create:
+        alert: 'Warning: The fields cannot be blank'
     actions:
       create:
         notice: '%{resource_name} was successfully created.'

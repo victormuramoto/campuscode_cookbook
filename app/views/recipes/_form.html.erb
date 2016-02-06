@@ -19,6 +19,7 @@
 <%= f.text_area :ingredients %>
 <%= f.label :description, t('recipes.fields.description') + ':' %>
 <%= f.text_area :description %>
+<%= f.attachment_field :image %>
 
 
 <%= f.submit button_label,id:'submit' %>

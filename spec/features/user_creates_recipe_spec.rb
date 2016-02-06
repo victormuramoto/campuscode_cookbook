@@ -60,7 +60,7 @@ feature 'User creates a recipe' do
     expect(page).to have_content recipe.food_type.name
     expect(page).to have_content recipe.food_preference.name
     expect(page).to have_content recipe.kitchen.name
-    expect(page).to have_css("img[src*='company_image.jpg']")
+    expect(page).to have_css("img[src*='image.jpg']")
   end
   scenario 'invalid data' do
     recipe = build(:recipe,

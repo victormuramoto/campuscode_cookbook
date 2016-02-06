@@ -7,3 +7,4 @@
 <p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
 <p><%= t('recipes.fields.ingredients') %>:</p>  <p><%= @recipe.ingredients %></p>
 <p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
+<p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>

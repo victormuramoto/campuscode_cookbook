@@ -1,6 +1,6 @@
 class KitchensController < ApplicationController
   before_action :set_kitchen, only: [:show]
-  before_action :authenticate_admin!, only: [:new, :create, :show]
+  before_action :authenticate_admin!, only: [:new, :create]
 
   def show
   end

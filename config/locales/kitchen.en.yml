@@ -7,3 +7,4 @@ en:
         create_kitchen: 'Create Cuisine'
       titles:
         new_kitchen: 'New Cuisine'
+      filters: 'Cuisine'

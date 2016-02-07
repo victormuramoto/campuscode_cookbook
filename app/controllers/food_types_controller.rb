@@ -1,6 +1,6 @@
 class FoodTypesController < ApplicationController
   before_action :set_food_type, only: [:show]
-  before_action :authenticate_admin!, only: [:new, :create, :show]
+  before_action :authenticate_admin!, only: [:new, :create]
 
   def show
   end

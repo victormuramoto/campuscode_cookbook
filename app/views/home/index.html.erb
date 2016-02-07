@@ -6,3 +6,17 @@
   <p><%= t('recipes.fields.kitchen') %>: <%= recipe.kitchen.name %></p>
   <p><%= image_tag attachment_url(recipe, :image, :fill, 300, 300, format: "jpg") %></p>
 <% end %>
+
+<%= t('kitchen.filters') %>
+<% @kitchens.each do |kitchen| %>
+  <%= link_to kitchen.name, kitchen %>
+<% end %>
+
+<%= t('food_preference.filters') %>
+<% @food_preferences.each do |food_preference| %>
+  <%= link_to food_preference.name, food_preference %>
+<% end %>
+<%= t('food_type.filters') %>
+<% @food_types.each do |food_type| %>
+  <%= link_to food_type.name, food_type %>
+<% end %>

@@ -7,3 +7,4 @@ pt-BR:
         create_food_type: 'Criar Tipo de Comida'
       titles:
         new_food_type: 'Novo Tipo de Comida'
+      filters: 'Tipo de Comida'

@@ -43,7 +43,7 @@ feature 'User see recipes in homepage' do
   end
 
   scenario 'see last 19 recipes created' do
-    recipes = create_list(:recipe,19)
+    recipes = create_list(:recipe, 19)
 
     visit root_path
 
@@ -52,7 +52,7 @@ feature 'User see recipes in homepage' do
     end
   end
   scenario 'see last 20 recipes created' do
-    recipes = create_list(:recipe,20)
+    recipes = create_list(:recipe, 20)
 
     visit root_path
 
@@ -61,12 +61,11 @@ feature 'User see recipes in homepage' do
     end
   end
   scenario 'do not see last 21 recipes created' do
-    recipes = create_list(:recipe,21)
+    recipes = create_list(:recipe, 21)
     visit root_path
     (20..1).each do |i|
       expect(page).to have_content recipes[i].name
     end
     expect(page).to_not have_content recipes[0].name
-
   end
 end

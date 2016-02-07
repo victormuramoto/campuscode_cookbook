@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        60,
+        63,
         null,
         null,
         null,
@@ -43,6 +43,9 @@
         1,
         1,
         17,
+        17,
+        17,
+        17,
         null,
         null
       ],
@@ -57,7 +60,19 @@
         null,
         null
       ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/kitchen.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_preference.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_type.rb": [
         1,
         1,
         1,
@@ -83,18 +98,12 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
         2,
         null,
-        null
-      ],
-      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/food_type.rb": [
-        1,
-        1,
-        1,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/food_types_controller.rb": [
@@ -117,18 +126,12 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
         2,
         null,
-        null
-      ],
-      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/kitchen.rb": [
-        1,
-        1,
-        1,
         null
       ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/kitchens_controller.rb": [
@@ -151,7 +154,7 @@
         1,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -198,6 +201,6 @@
         null
       ]
     },
-    "timestamp": 1454821332
+    "timestamp": 1454822907
   }
 }

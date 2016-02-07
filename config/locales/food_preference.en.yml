@@ -2,8 +2,9 @@
 en:
   food_preference:
       fields:
-        food_preference_name: 'Preference:'
+        food_preference_name: 'Preference'
       buttons:
         create_food_preference: 'Created Food Preference'
       titles:
         new_food_preference: 'New Food Preference'
+      filters: 'Preference'

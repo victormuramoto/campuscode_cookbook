@@ -3,6 +3,8 @@ pt-BR:
     recipes:
       create:
         alert: 'Cuidado! Alguns campos não podem ficar em branco'
+      update:
+        alert: 'Warning: The fields cannot be blank'
     kitchens:
       create:
         alert: 'Cuidado! Todos os campos devem ser preenchidos'

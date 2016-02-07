@@ -1,6 +1,14 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/models/admin.rb": [
         1,
         null,
@@ -22,7 +30,7 @@
         1,
         null,
         1,
-        63,
+        56,
         null,
         null,
         null,
@@ -171,36 +179,36 @@
         null,
         null,
         1,
-        3,
+        1,
         null,
         null,
         1,
-        3,
-        3,
-        null,
-        null,
-        1,
-        null,
-        1,
-        6,
-        6,
-        6,
-        6,
-        null,
-        null,
-        1,
-        4,
+        0,
+        0,
         null,
         null,
         1,
         null,
-        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        0,
         null,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1454822907
+    "timestamp": 1454875875
   }
 }

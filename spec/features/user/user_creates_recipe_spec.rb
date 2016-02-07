@@ -1,10 +1,12 @@
 require 'rails_helper'
 feature 'User creates a recipe' do
   scenario 'success without image' do
+    user - login_user
     recipe = build(:recipe,
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
-                   kitchen: create(:kitchen))
+                   kitchen: create(:kitchen),
+                   user:user)
 
     visit new_recipe_path
 
@@ -31,10 +33,12 @@ feature 'User creates a recipe' do
     expect(page).to have_content recipe.kitchen.name
   end
   scenario 'success with image' do
+    user = login_user
     recipe = build(:recipe,
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
-                   kitchen: create(:kitchen))
+                   kitchen: create(:kitchen),
+                   user:user)
 
     visit new_recipe_path
 
@@ -64,10 +68,12 @@ feature 'User creates a recipe' do
     expect(page).to have_css("img[src*='image.jpg']")
   end
   scenario 'invalid data' do
+    user = login_user
     recipe = build(:recipe,
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
-                   kitchen: create(:kitchen))
+                   kitchen: create(:kitchen),
+                   user:user)
 
     visit new_recipe_path
 
@@ -88,4 +94,12 @@ feature 'User creates a recipe' do
 
     expect(page).to have_content t('flash.recipes.create.alert')
   end
+  scenario 'Redirected to sign in page' do
+    visit new_recipe_path
+
+    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'Email'
+    expect(page).to have_content 'Password'
+  end
+
 end

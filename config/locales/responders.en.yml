@@ -3,6 +3,8 @@ en:
     recipes:
       create:
         alert: 'Warning: The fields cannot be blank'
+      update:
+        alert: 'Warning: The fields cannot be blank'
     kitchens:
       create:
         alert: 'Warning: The fields cannot be blank'

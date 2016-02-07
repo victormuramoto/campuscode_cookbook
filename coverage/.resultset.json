@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        54,
+        60,
         null,
         null,
         null,
@@ -42,7 +42,7 @@
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/home_controller.rb": [
         1,
         1,
-        11,
+        17,
         null,
         null
       ],
@@ -198,6 +198,6 @@
         null
       ]
     },
-    "timestamp": 1454813085
+    "timestamp": 1454821332
   }
 }

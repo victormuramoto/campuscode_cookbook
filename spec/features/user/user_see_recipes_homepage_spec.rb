@@ -1,8 +1,9 @@
 require 'rails_helper'
 feature 'User see recipes in homepage' do
   scenario 'success' do
-    recipe1 = create(:recipe)
-    recipe2 = create(:recipe)
+    user = create(:user)
+    recipe1 = create(:recipe, user:user)
+    recipe2 = create(:recipe, user:user)
 
     visit root_path
 
@@ -20,11 +21,15 @@ feature 'User see recipes in homepage' do
   end
 
   scenario 'success with image' do
-    recipe1 = create(:recipe, image: File.new(
-      Rails.root + 'app/assets/images/strogonoff.jpg'))
+    user = create(:user)
+    recipe1 = create(:recipe,
+                      image: File.new(
+                      Rails.root + 'app/assets/images/strogonoff.jpg'),
+                      user:user)
     recipe2 = create(:recipe,
-                     image: File.new(
-                       Rails.root + 'app/assets/images/strogonoff.jpg'))
+                      image: File.new(
+                      Rails.root + 'app/assets/images/strogonoff.jpg'),
+                      user:user)
     visit root_path
 
     expect(page).to have_content recipe1.name
@@ -43,7 +48,8 @@ feature 'User see recipes in homepage' do
   end
 
   scenario 'see last 19 recipes created' do
-    recipes = create_list(:recipe, 19)
+    user = create(:user)
+    recipes = create_list(:recipe, 19, user:user)
 
     visit root_path
 
@@ -52,7 +58,8 @@ feature 'User see recipes in homepage' do
     end
   end
   scenario 'see last 20 recipes created' do
-    recipes = create_list(:recipe, 20)
+    user = create(:user)
+    recipes = create_list(:recipe, 20, user:user)
 
     visit root_path
 
@@ -61,7 +68,8 @@ feature 'User see recipes in homepage' do
     end
   end
   scenario 'do not see last 21 recipes created' do
-    recipes = create_list(:recipe, 21)
+    user = create(:user)
+    recipes = create_list(:recipe, 21, user:user)
     visit root_path
     (20..1).each do |i|
       expect(page).to have_content recipes[i].name

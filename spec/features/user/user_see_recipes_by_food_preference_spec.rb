@@ -11,27 +11,34 @@ feature 'user see recipes by food preference' do
     expect(page).to have_content food_preference2.name
   end
   scenario 'user see list of recipes available by food preference' do
+    user = create(:user)
     food_preference1 = create(:food_preference, name: 'Frango')
     food_preference2 = create(:food_preference, name: 'Peixe')
 
     recipe1 = create(:recipe,
                      name: 'Frango Assado',
-                     food_preference: food_preference1)
+                     food_preference: food_preference1,
+                     user:user)
     recipe2 = create(:recipe,
                      name: 'Fricasse de Frango',
-                     food_preference: food_preference1)
+                     food_preference: food_preference1,
+                     user:user)
     recipe3 = create(:recipe,
                      name: 'Frango a passarinho',
-                     food_preference: food_preference1)
+                     food_preference: food_preference1,
+                     user:user)
     recipe4 = create(:recipe,
                      name: 'Salmão grelhado',
-                     food_preference: food_preference2)
+                     food_preference: food_preference2,
+                     user:user)
     recipe5 = create(:recipe,
                      name: 'Sushi de salmão',
-                     food_preference: food_preference2)
+                     food_preference: food_preference2,
+                     user:user)
     recipe6 = create(:recipe,
                      name: 'Temaki de salmão',
-                     food_preference: food_preference2)
+                     food_preference: food_preference2,
+                     user:user)
 
     visit root_path
 

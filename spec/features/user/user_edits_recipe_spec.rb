@@ -4,7 +4,7 @@ feature 'User edits a recipe' do
     user = login_user
     new_food_preference = create(:food_preference,name: 'Feijão')
     new_food_type = create(:food_type, name: 'Principal')
-    new_kitchen = create(:kitchen, name: 'Paulista')
+    new_kitchen = create(:kitchen, name: 'Carioca')
 
     recipe = create(:recipe, user: user)
     new_recipe = build(:recipe,
@@ -72,7 +72,12 @@ feature 'User edits a recipe' do
 
     visit edit_recipe_path(recipe)
 
-    fill_in 'recipe[number_people]', with: recipe.number_people
+    fill_in 'recipe[name]', with: ''
+    fill_in 'recipe[number_people]', with: ''
+    fill_in 'recipe[time_prepare]', with: ''
+    fill_in 'recipe[ingredients]', with: ''
+    fill_in 'recipe[description]', with: ''
+    fill_in 'recipe[number_people]', with: ''
     within '#recipe_food_type_id' do
       find("option[value='']").click
     end
@@ -82,8 +87,9 @@ feature 'User edits a recipe' do
     within '#recipe_kitchen_id' do
       find("option[value='']").click
     end
-    fill_in 'recipe[time_prepare]', with: recipe.time_prepare
-    select  recipe.difficult, from: 'recipe[difficult]'
+    within '#recipe_difficult' do
+      find("option[value='']").click
+    end
 
     click_on 'submit'
 

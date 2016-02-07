@@ -11,27 +11,34 @@ feature 'user see recipes by kitchen' do
     expect(page).to have_content kitchen2.name
   end
   scenario 'user see list of recipes available by kitchen' do
+    user = create(:user)
     kitchen1 = create(:kitchen, name: 'Paulista')
     kitchen2 = create(:kitchen, name: 'Gaúcha')
 
     recipe1 = create(:recipe,
                      name: 'Strogonoff de Frango',
-                     kitchen: kitchen1)
+                     kitchen: kitchen1,
+                     user:user)
     recipe2 = create(:recipe,
                      name: 'Strogonoff de Carne',
-                     kitchen: kitchen1)
+                     kitchen: kitchen1,
+                     user:user)
     recipe3 = create(:recipe,
                      name: 'Bife a milanesa',
-                     kitchen: kitchen1)
+                     kitchen: kitchen1,
+                     user:user)
     recipe4 = create(:recipe,
                      name: 'Entrecot',
-                     kitchen: kitchen2)
+                     kitchen: kitchen2,
+                     user:user)
     recipe5 = create(:recipe,
                      name: 'Churrasco',
-                     kitchen: kitchen2)
+                     kitchen: kitchen2,
+                     user:user)
     recipe6 = create(:recipe,
                      name: 'Chimarrão',
-                     kitchen: kitchen2)
+                     kitchen: kitchen2,
+                     user:user)
 
     visit root_path
 

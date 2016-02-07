@@ -17,6 +17,13 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
+  factory :user do
+    email 'victor.muramoto@gmail.com'
+    password '12345678'
+  end
+end
+
+FactoryGirl.define do
   factory :food_preference do
     name 'Frango'
   end
@@ -39,5 +46,6 @@ FactoryGirl.define do
     food_type
     food_preference
     kitchen
+    user
   end
 end

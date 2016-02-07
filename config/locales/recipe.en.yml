@@ -14,5 +14,7 @@ en:
         description: 'Instructions'
       buttons:
         create_recipe: 'Create Recipe'
+        edit_recipe: 'Edit Recipe'
       titles:
         new_recipe: 'New Recipe'
+        edit_recipe: 'Edit Recipe'

@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show]
-  before_action :set_collections, only: [:new, :create]
+  before_action :authenticate_user!,
+                 only: [:new, :create, :edit, :update]
+  before_action :set_recipe, only: [:edit, :show, :update]
+  before_action :set_collections, only: [:new, :create, :edit, :update]
 
   def show
   end
@@ -11,6 +13,14 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
+    respond_with @recipe
+  end
+
+  def edit
+  end
+
+  def update
+    @recipe.update(recipe_params)
     respond_with @recipe
   end
 
@@ -31,6 +41,6 @@ class RecipesController < ApplicationController
     params.require(:recipe)
           .permit(:name, :number_people, :time_prepare, :difficult,
                   :ingredients, :description, :food_type_id,
-                  :food_preference_id, :kitchen_id, :image)
+                  :food_preference_id, :kitchen_id, :user_id, :image)
   end
 end

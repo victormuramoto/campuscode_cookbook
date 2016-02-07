@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207165315) do
+ActiveRecord::Schema.define(version: 20160207203400) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,11 +62,13 @@ ActiveRecord::Schema.define(version: 20160207165315) do
     t.integer  "food_preference_id"
     t.integer  "kitchen_id"
     t.string   "image_id"
+    t.integer  "user_id"
   end
 
   add_index "recipes", ["food_preference_id"], name: "index_recipes_on_food_preference_id"
   add_index "recipes", ["food_type_id"], name: "index_recipes_on_food_type_id"
   add_index "recipes", ["kitchen_id"], name: "index_recipes_on_kitchen_id"
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

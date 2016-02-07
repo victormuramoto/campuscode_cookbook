@@ -1,7 +1,7 @@
 require 'rails_helper'
 feature 'User creates a recipe' do
   scenario 'success without image' do
-    user - login_user
+    user = login_user
     recipe = build(:recipe,
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),

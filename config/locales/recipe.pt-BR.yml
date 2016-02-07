@@ -14,5 +14,7 @@ pt-BR:
         description: 'Preparo'
       buttons:
         create_recipe: 'Criar Receita'
+        edit_recipe: 'Editar Receita'
       titles:
         new_recipe: 'Nova Receita'
+        edit_recipe: 'Editar Receita'

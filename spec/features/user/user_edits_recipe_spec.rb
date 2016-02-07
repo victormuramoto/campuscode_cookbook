@@ -4,9 +4,9 @@ feature 'User edits a recipe' do
     user = login_user
     new_food_preference = create(:food_preference,name: 'Feijão')
     new_food_type = create(:food_type, name: 'Principal')
-    new_kitchen = create(create(:kitchen, name: 'Paulista'))
+    new_kitchen = create(:kitchen, name: 'Paulista')
 
-    recipe = create(:recipe, user:user)
+    recipe = create(:recipe, user: user)
     new_recipe = build(:recipe,
                         name: 'Tutu de feijão',
                         number_people: 4,
@@ -16,7 +16,8 @@ feature 'User edits a recipe' do
                         description: 'misture tudo',
                         food_preference: new_food_preference,
                         food_type: new_food_type,
-                        kitchen: new_kitchen,)
+                        kitchen: new_kitchen,
+                        user: nil)
 
     visit edit_recipe_path(recipe)
 
@@ -54,8 +55,8 @@ feature 'User edits a recipe' do
 
   end
   scenario 'Redirected to sign in page' do
-    recipe = create(:recipe, user:user)
-    visit edit_recipe_path
+    recipe = create(:recipe)
+    visit edit_recipe_path(recipe)
 
     expect(page).to have_content 'Log in'
     expect(page).to have_content 'Email'
@@ -86,6 +87,6 @@ feature 'User edits a recipe' do
 
     click_on 'submit'
 
-    expect(page).to have_content t('flash.recipes.edit.alert')
+    expect(page).to have_content t('flash.recipes.update.alert')
   end
 end

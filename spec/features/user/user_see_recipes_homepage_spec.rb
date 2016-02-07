@@ -41,4 +41,32 @@ feature 'User see recipes in homepage' do
     expect(page).to have_content recipe2.kitchen.name
     expect(page).to have_css("img[src*='image.jpg']")
   end
+
+  scenario 'see last 19 recipes created' do
+    recipes = create_list(:recipe,19)
+
+    visit root_path
+
+    recipes.each do |recipe|
+      expect(page).to have_content recipe.name
+    end
+  end
+  scenario 'see last 20 recipes created' do
+    recipes = create_list(:recipe,20)
+
+    visit root_path
+
+    recipes.each do |recipe|
+      expect(page).to have_content recipe.name
+    end
+  end
+  scenario 'do not see last 21 recipes created' do
+    recipes = create_list(:recipe,21)
+    visit root_path
+
+    (0..19).each do |i|
+      expect(page).to have_content recipes[i].name
+    end
+    expect(page).to_not have_content recipes[20].name
+  end
 end

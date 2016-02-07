@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  sequence :name do |n|
+    "Strogonoff de frango#{n}"
+  end
+end
+FactoryGirl.define do
   factory :food_type do
     name 'Entrada'
   end
@@ -25,7 +30,7 @@ end
 
 FactoryGirl.define do
   factory :recipe do
-    name 'Strognoff de Frango'
+    name
     number_people 6
     time_prepare  45
     difficult 'Facil'
@@ -34,18 +39,5 @@ FactoryGirl.define do
     food_type
     food_preference
     kitchen
-  end
-  FactoryGirl.define do
-    factory :other_recipe do
-      name 'Crepe de nutella'
-      number_people 1
-      time_prepare  10
-      difficult 'Facil'
-      ingredients 'Nutella Farinha e ovo'
-      description 'jogue tudo na panela e vire'
-      food_type
-      food_preference
-      kitchen
-    end
   end
 end

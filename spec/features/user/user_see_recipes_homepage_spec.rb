@@ -63,10 +63,10 @@ feature 'User see recipes in homepage' do
   scenario 'do not see last 21 recipes created' do
     recipes = create_list(:recipe,21)
     visit root_path
-
-    (0..19).each do |i|
+    (20..1).each do |i|
       expect(page).to have_content recipes[i].name
     end
-    expect(page).to_not have_content recipes[20].name
+    expect(page).to_not have_content recipes[0].name
+
   end
 end

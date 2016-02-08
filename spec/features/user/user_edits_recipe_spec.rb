@@ -2,22 +2,22 @@ require 'rails_helper'
 feature 'User edits a recipe' do
   scenario 'success' do
     user = login_user
-    new_food_preference = create(:food_preference,name: 'Feijão')
+    new_food_preference = create(:food_preference, name: 'Feijão')
     new_food_type = create(:food_type, name: 'Principal')
     new_kitchen = create(:kitchen, name: 'Carioca')
 
     recipe = create(:recipe, user: user)
     new_recipe = build(:recipe,
-                        name: 'Tutu de feijão',
-                        number_people: 4,
-                        time_prepare: 30,
-                        difficult: 'Medio',
-                        ingredients: 'Feijão e farinha',
-                        description: 'misture tudo',
-                        food_preference: new_food_preference,
-                        food_type: new_food_type,
-                        kitchen: new_kitchen,
-                        user: nil)
+                       name: 'Tutu de feijão',
+                       number_people: 4,
+                       time_prepare: 30,
+                       difficult: 'Medio',
+                       ingredients: 'Feijão e farinha',
+                       description: 'misture tudo',
+                       food_preference: new_food_preference,
+                       food_type: new_food_type,
+                       kitchen: new_kitchen,
+                       user: nil)
 
     visit edit_recipe_path(recipe)
 
@@ -52,7 +52,6 @@ feature 'User edits a recipe' do
     expect(page).to_not have_content recipe.food_type.name
     expect(page).to_not have_content recipe.food_preference.name
     expect(page).to_not have_content recipe.kitchen.name
-
   end
   scenario 'Redirected to sign in page' do
     recipe = create(:recipe)
@@ -65,10 +64,10 @@ feature 'User edits a recipe' do
   scenario 'invalid data' do
     user = login_user
     recipe = create(:recipe,
-                   food_preference: create(:food_preference),
-                   food_type: create(:food_type),
-                   kitchen: create(:kitchen),
-                   user:user)
+                    food_preference: create(:food_preference),
+                    food_type: create(:food_type),
+                    kitchen: create(:kitchen),
+                    user: user)
 
     visit edit_recipe_path(recipe)
 
@@ -94,5 +93,17 @@ feature 'User edits a recipe' do
     click_on 'submit'
 
     expect(page).to have_content t('flash.recipes.update.alert')
+  end
+  scenario 'user cannot edit jobs of other users' do
+    user = login_user
+    recipe = create(:recipe,
+                     user:create(:user, email:'other@user.com.br'))
+
+    visit edit_recipe_path(recipe)
+
+    expect(page).to have_content t('recipes.permit.not_allowed')
+
+
+
   end
 end

@@ -18,27 +18,27 @@ feature 'user see recipes by food type' do
     recipe1 = create(:recipe,
                      name: 'Ceviche',
                      food_type: food_type1,
-                     user:user)
+                     user: user)
     recipe2 = create(:recipe,
                      name: 'Torresmo',
                      food_type: food_type1,
-                     user:user)
+                     user: user)
     recipe3 = create(:recipe,
                      name: 'Bruscheta',
                      food_type: food_type1,
-                     user:user)
+                     user: user)
     recipe4 = create(:recipe,
                      name: 'Sorvete',
                      food_type: food_type2,
-                     user:user)
+                     user: user)
     recipe5 = create(:recipe,
                      name: 'Torta de Morango',
                      food_type: food_type2,
-                     user:user)
+                     user: user)
     recipe6 = create(:recipe,
                      name: 'Banana Split',
                      food_type: food_type2,
-                     user:user)
+                     user: user)
 
     visit root_path
 

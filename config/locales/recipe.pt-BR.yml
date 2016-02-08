@@ -18,3 +18,5 @@ pt-BR:
       titles:
         new_recipe: 'Nova Receita'
         edit_recipe: 'Editar Receita'
+      permit:
+        not_allowed: 'Desculpe, você só pode editar receitas que pertencem lhe pertencem.'

@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!,
-                 only: [:new, :create, :edit, :update]
+                only: [:new, :create, :edit, :update]
   before_action :set_recipe, only: [:edit, :show, :update]
   before_action :set_collections, only: [:new, :create, :edit, :update]
 
@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
+    @recipe = Recipe.create(recipe_params.merge(user: current_user))
     respond_with @recipe
   end
 

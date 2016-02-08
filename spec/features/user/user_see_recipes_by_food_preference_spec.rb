@@ -18,27 +18,27 @@ feature 'user see recipes by food preference' do
     recipe1 = create(:recipe,
                      name: 'Frango Assado',
                      food_preference: food_preference1,
-                     user:user)
+                     user: user)
     recipe2 = create(:recipe,
                      name: 'Fricasse de Frango',
                      food_preference: food_preference1,
-                     user:user)
+                     user: user)
     recipe3 = create(:recipe,
                      name: 'Frango a passarinho',
                      food_preference: food_preference1,
-                     user:user)
+                     user: user)
     recipe4 = create(:recipe,
                      name: 'Salmão grelhado',
                      food_preference: food_preference2,
-                     user:user)
+                     user: user)
     recipe5 = create(:recipe,
                      name: 'Sushi de salmão',
                      food_preference: food_preference2,
-                     user:user)
+                     user: user)
     recipe6 = create(:recipe,
                      name: 'Temaki de salmão',
                      food_preference: food_preference2,
-                     user:user)
+                     user: user)
 
     visit root_path
 

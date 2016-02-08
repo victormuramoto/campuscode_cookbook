@@ -101,5 +101,4 @@ feature 'User creates a recipe' do
     expect(page).to have_content 'Email'
     expect(page).to have_content 'Password'
   end
-
 end

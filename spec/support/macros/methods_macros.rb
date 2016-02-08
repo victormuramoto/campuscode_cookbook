@@ -9,6 +9,7 @@ module MethodsMacros
     click_on 'Log in'
     admin
   end
+
   def login_user
     user = create(:user)
     visit new_user_session_path

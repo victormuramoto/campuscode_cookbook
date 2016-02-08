@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
                 only: [:new, :create, :edit, :update]
   before_action :set_recipe, only: [:edit, :show, :update]
   before_action :set_collections, only: [:new, :create, :edit, :update]
+  before_action :check_user, only:[:edit,:update]
 
   def show
   end
@@ -25,6 +26,13 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def check_user
+     if @recipe.user != current_user
+       flash[:notice] = t('recipes.permit.not_allowed')
+       redirect_to root_path
+     end
+  end
 
   def set_collections
     @food_types = FoodType.all

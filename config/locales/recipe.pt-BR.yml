@@ -15,6 +15,7 @@ pt-BR:
       buttons:
         create_recipe: 'Criar Receita'
         edit_recipe: 'Editar Receita'
+        destroy_recipe: 'Excluir Receita'
       titles:
         new_recipe: 'Nova Receita'
         edit_recipe: 'Editar Receita'

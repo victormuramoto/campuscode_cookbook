@@ -8,3 +8,5 @@
 <p><%= t('recipes.fields.ingredients') %>:</p>  <p><%= @recipe.ingredients %></p>
 <p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
 <p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
+<%= button_to t('recipes.buttons.destroy_recipe'), { action: "destroy", id: @recipe.id },
+                                method: :delete, data: { confirm: "Are you sure?" } %>

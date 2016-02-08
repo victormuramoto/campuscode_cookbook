@@ -1,3 +1,4 @@
+<span class="error_message"><%= flash[:notice] %></span>
 <% @recipes.each do |recipe| %>
   <p><%= t('recipes.fields.recipe_name') %>: <%= recipe.name %></p>
   <p><%= t('recipes.fields.difficult') %>: <%= recipe.difficult %></p>

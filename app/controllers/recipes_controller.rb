@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!,
                 only: [:new, :create, :edit, :update]
-  before_action :set_recipe, only: [:edit, :show, :update]
+  before_action :set_recipe, only: [:edit, :show, :update, :destroy]
   before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :check_user, only:[:edit,:update]
 
@@ -25,6 +25,10 @@ class RecipesController < ApplicationController
     respond_with @recipe
   end
 
+  def destroy
+    @recipe.destroy
+    respond_with @recipe, location:root_path
+  end
   private
 
   def check_user

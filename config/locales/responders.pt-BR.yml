@@ -5,6 +5,8 @@ pt-BR:
         alert: 'Cuidado! Alguns campos não podem ficar em branco'
       update:
         alert: 'Cuidado! Alguns campos não podem ficar em branco'
+      destroy:
+        notice: 'Receita foi deletada com sucesso'
     kitchens:
       create:
         alert: 'Cuidado! Todos os campos devem ser preenchidos'

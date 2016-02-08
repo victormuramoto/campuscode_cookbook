@@ -94,7 +94,7 @@ feature 'User edits a recipe' do
 
     expect(page).to have_content t('flash.recipes.update.alert')
   end
-  scenario 'user cannot edit jobs of other users' do
+  scenario 'user cannot edit recipes of other users' do
     user = login_user
     recipe = create(:recipe,
                      user:create(:user, email:'other@user.com.br'))
@@ -102,8 +102,5 @@ feature 'User edits a recipe' do
     visit edit_recipe_path(recipe)
 
     expect(page).to have_content t('recipes.permit.not_allowed')
-
-
-
   end
 end

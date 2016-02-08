@@ -5,6 +5,8 @@ en:
         alert: 'Warning: The fields cannot be blank'
       update:
         alert: 'Warning: The fields cannot be blank'
+      destroy:
+        notice: 'Recipe was successfully destroyed'
     kitchens:
       create:
         alert: 'Warning: The fields cannot be blank'

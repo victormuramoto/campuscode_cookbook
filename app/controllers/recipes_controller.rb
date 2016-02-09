@@ -1,11 +1,16 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!,
                 only: [:new, :create, :edit, :update, :destroy, :like, :unlike]
-  before_action :set_recipe, only: [:edit, :show, :update, :destroy, :like, :unlike]
+  before_action :set_recipe, only: [:edit,
+                                    :show,
+                                    :update,
+                                    :destroy,
+                                    :like,
+                                    :unlike]
   before_action :add_user_recipe, only: [:like]
   before_action :remove_user_recipe, only: [:unlike]
   before_action :set_collections, only: [:new, :create, :edit, :update]
-  before_action :check_user, only:[:edit,:update]
+  before_action :check_user, only: [:edit, :update]
 
   def show
   end
@@ -29,7 +34,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    respond_with @recipe, location:root_path
+    respond_with @recipe, location: root_path
   end
 
   def like
@@ -46,9 +51,9 @@ class RecipesController < ApplicationController
 
   def favorite
     @liked_recipes = Recipe.all.joins(
-    'INNER JOIN user_recipes ON recipes.id = user_recipes.recipe_id
-     INNER JOIN users ON user_recipes.user_id = users.id')
-                               .where("users.id = #{current_user.id}")
+      'INNER JOIN user_recipes ON recipes.id = user_recipes.recipe_id
+       INNER JOIN users ON user_recipes.user_id = users.id')
+                           .where("users.id = #{current_user.id}")
   end
 
   private
@@ -66,10 +71,10 @@ class RecipesController < ApplicationController
   end
 
   def check_user
-     if @recipe.user != current_user
-       flash[:notice] = t('recipes.permit.not_allowed')
-       redirect_to root_path
-     end
+    if @recipe.user != current_user
+      flash[:notice] = t('recipes.permit.not_allowed')
+      redirect_to root_path
+    end
   end
 
   def set_collections

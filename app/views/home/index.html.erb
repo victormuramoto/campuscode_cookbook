@@ -24,3 +24,11 @@
 <% @food_types.each do |food_type| %>
   <%= link_to food_type.name, food_type %>
 <% end %>
+
+<div class='favorites'>
+  Favoritas
+  <% @liked_recipes.each do |recipe| %>
+    <%= recipe.name %>
+    Likes: <%= recipe.likes %>
+  <% end %>
+</div>

@@ -2,7 +2,7 @@ require 'rails_helper'
 feature 'User destroy a recipe' do
   scenario 'find button to destroy recipe' do
     user = login_user
-    recipe = create(:recipe, user:user)
+    recipe = create(:recipe, user: user)
 
     visit recipe_path(recipe)
 
@@ -19,18 +19,19 @@ feature 'User destroy a recipe' do
   end
   scenario 'success' do
     user = login_user
-    recipe = create(:recipe, user:user)
+    recipe = create(:recipe, user: user)
 
     visit recipe_path(recipe)
 
-    expect { click_button t('recipes.buttons.destroy_recipe') }.to change(Recipe, :count).by(-1)
+    expect { click_button t('recipes.buttons.destroy_recipe') }
+      .to(change(Recipe, :count).by(-1))
 
     expect(page).to have_content t('flash.recipes.destroy.notice')
   end
   scenario 'user cannot destroy recipes of other users' do
-    user = login_user
+    login_user
     recipe = create(:recipe,
-                     user:create(:user, email:'other@user.com.br'))
+                    user: create(:user, email: 'other@user.com.br'))
 
     visit recipe_path(recipe)
 

@@ -6,7 +6,7 @@ feature 'User creates a recipe' do
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
                    kitchen: create(:kitchen),
-                   user:user)
+                   user: user)
 
     visit new_recipe_path
 
@@ -38,7 +38,7 @@ feature 'User creates a recipe' do
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
                    kitchen: create(:kitchen),
-                   user:user)
+                   user: user)
 
     visit new_recipe_path
 
@@ -73,7 +73,7 @@ feature 'User creates a recipe' do
                    food_preference: create(:food_preference),
                    food_type: create(:food_type),
                    kitchen: create(:kitchen),
-                   user:user)
+                   user: user)
 
     visit new_recipe_path
 

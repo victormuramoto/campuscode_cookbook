@@ -9,7 +9,6 @@ class Recipe < ActiveRecord::Base
             :food_preference, :ingredients, :description, presence: true
 
   def check_like?(user)
-   UserRecipe.where("recipe_id = #{id} and user_id = #{user.id}") == []
+    UserRecipe.where("recipe_id = #{id} and user_id = #{user.id}") == []
   end
-  
 end

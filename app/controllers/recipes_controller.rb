@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   before_action :check_user, only: [:edit, :update]
 
   def show
+    @recipe = RecipePresenter.new(Recipe.find(params[:id]))
   end
 
   def new

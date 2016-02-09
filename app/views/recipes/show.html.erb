@@ -10,10 +10,7 @@
 <p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
 <p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
 
-<% if current_user == @recipe.user %>
-  <%= button_to t('recipes.buttons.destroy_recipe'), { action: "destroy", id: @recipe.id },
-                                  method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+<%= @recipe.check_destroy(current_user) %>
 <% if user_signed_in? %>
   <% if @recipe.check_like?(current_user) %>
     <%= button_to t('recipes.buttons.like_recipe'), { action: "like", id: @recipe.id },

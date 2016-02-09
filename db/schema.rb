@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209014636) do
+ActiveRecord::Schema.define(version: 20160209181120) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -91,9 +91,16 @@ ActiveRecord::Schema.define(version: 20160209014636) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
+    t.string   "city",                   default: "", null: false
+    t.string   "facebook"
+    t.string   "twitter"
+    t.integer  "food_preference_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["food_preference_id"], name: "index_users_on_food_preference_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

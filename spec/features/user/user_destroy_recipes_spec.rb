@@ -15,7 +15,7 @@ feature 'User destroy a recipe' do
     expect(page).to have_content recipe.food_type.name
     expect(page).to have_content recipe.food_preference.name
     expect(page).to have_content recipe.kitchen.name
-    expect(page).to have_selector("input[type=submit][value= '#{t('recipes.buttons.destroy_recipe')}']")
+    expect(page).to have_content(t('recipes.buttons.destroy_recipe'))
   end
   scenario 'success' do
     user = login_user
@@ -23,7 +23,7 @@ feature 'User destroy a recipe' do
 
     visit recipe_path(recipe)
 
-    expect { click_button t('recipes.buttons.destroy_recipe') }
+    expect { click_link t('recipes.buttons.destroy_recipe') }
       .to(change(Recipe, :count).by(-1))
 
     expect(page).to have_content t('flash.recipes.destroy.notice')

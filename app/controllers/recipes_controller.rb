@@ -2,18 +2,17 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!,
                 only: [:new, :create, :edit, :update, :destroy, :like, :unlike]
   before_action :set_recipe, only: [:edit,
-                                    :show,
                                     :update,
                                     :destroy,
                                     :like,
                                     :unlike]
+  before_action :set_recipe_presenter, only: [:show]                                    
   before_action :add_user_recipe, only: [:like]
   before_action :remove_user_recipe, only: [:unlike]
   before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :check_user, only: [:edit, :update]
 
   def show
-    @recipe = RecipePresenter.new(Recipe.find(params[:id]))
   end
 
   def new
@@ -58,6 +57,10 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def set_recipe_presenter
+    @recipe = RecipePresenter.new(Recipe.find(params[:id]))
+  end
 
   def add_user_recipe
     @user_recipe = UserRecipe.new

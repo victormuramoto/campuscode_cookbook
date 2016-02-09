@@ -21,7 +21,6 @@ feature 'User creates a recipe' do
     select  recipe.kitchen.name, from: 'recipe[kitchen_id]'
 
     click_on 'submit'
-
     expect(page).to have_content recipe.name
     expect(page).to have_content recipe.number_people
     expect(page).to have_content recipe.time_prepare

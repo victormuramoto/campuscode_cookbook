@@ -1,8 +1,6 @@
 class RecipePresenter < SimpleDelegator
-  include ActionView::Helpers::UrlHelper
+  include Rails.application.routes.url_helpers
   attr_reader :recipe
-
-
 
   def initialize(recipe)
     @recipe = recipe
@@ -15,10 +13,24 @@ class RecipePresenter < SimpleDelegator
 
   def check_destroy(user)
     if user == @recipe.user
-      button_to t('recipes.buttons.destroy_recipe'), { action: "destroy", id: @recipe.id },
-                                      method: :delete, data: { confirm: "Are you sure?" }
-
+      helpers.link_to t('recipes.buttons.destroy_recipe'),
+        recipe_path(recipe),
+        method: :delete, data: { confirm: "Are you sure?" }
     end
+  end
+
+  def inject_favorite_option(user)
+   if user != nil
+     if @recipe.check_like?(user)
+       helpers.link_to t('recipes.buttons.like_recipe'),
+         like_recipe_path(recipe),
+         method: :post, data: { confirm: "Are you sure?" }
+     else
+       helpers.link_to t('recipes.buttons.unlike_recipe'),
+         unlike_recipe_path(recipe),
+         method: :post, data: { confirm: "Are you sure?" }
+     end
+   end
   end
 
   private

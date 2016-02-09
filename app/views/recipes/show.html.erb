@@ -11,12 +11,4 @@
 <p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
 
 <%= @recipe.check_destroy(current_user) %>
-<% if user_signed_in? %>
-  <% if @recipe.check_like?(current_user) %>
-    <%= button_to t('recipes.buttons.like_recipe'), { action: "like", id: @recipe.id },
-                                method: :post, data: { confirm: "Are you sure?" } %>
-  <% else %>
-    <%= button_to t('recipes.buttons.unlike_recipe'), { action: "unlike", id: @recipe.id },
-                                   method: :post, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
+<%= @recipe.inject_favorite_option(current_user) %>

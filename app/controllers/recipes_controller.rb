@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!,
-                only: [:new, :create, :edit, :update]
-  before_action :set_recipe, only: [:edit, :show, :update, :destroy]
+                only: [:new, :create, :edit, :update, :destroy, :like, :unlike]
+  before_action :set_recipe, only: [:edit, :show, :update, :destroy, :like, :unlike]
+  before_action :add_user_recipe, only: [:like]
+  before_action :remove_user_recipe, only: [:unlike]
   before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :check_user, only:[:edit,:update]
 
@@ -29,7 +31,39 @@ class RecipesController < ApplicationController
     @recipe.destroy
     respond_with @recipe, location:root_path
   end
+
+  def like
+    @recipe.likes = @recipe.likes + 1
+    @recipe.save
+    respond_with @recipe
+  end
+
+  def unlike
+    @recipe.likes = @recipe.likes - 1
+    @recipe.save
+    respond_with @recipe
+  end
+
+  def favorite
+    @liked_recipes = Recipe.all.joins(
+    'INNER JOIN user_recipes ON recipes.id = user_recipes.recipe_id
+     INNER JOIN users ON user_recipes.user_id = users.id')
+                               .where("users.id = #{current_user.id}")
+  end
+
   private
+
+  def add_user_recipe
+    @user_recipe = UserRecipe.new
+    @user_recipe.user_id = current_user.id
+    @user_recipe.recipe_id = @recipe.id
+    @user_recipe.save
+  end
+
+  def remove_user_recipe
+    @user_recipe = UserRecipe.find_by_recipe_id(@recipe.id)
+    @user_recipe.destroy
+  end
 
   def check_user
      if @recipe.user != current_user

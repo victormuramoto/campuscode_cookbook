@@ -7,6 +7,10 @@ pt-BR:
         alert: 'Cuidado! Alguns campos não podem ficar em branco'
       destroy:
         notice: 'Receita foi deletada com sucesso'
+      like:
+          notice: 'Receita foi favoritada com sucesso'
+      unlike:
+          notice: 'Receita não é mais favorita'
     kitchens:
       create:
         alert: 'Cuidado! Todos os campos devem ser preenchidos'

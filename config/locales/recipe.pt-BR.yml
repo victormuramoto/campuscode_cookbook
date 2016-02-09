@@ -16,6 +16,8 @@ pt-BR:
         create_recipe: 'Criar Receita'
         edit_recipe: 'Editar Receita'
         destroy_recipe: 'Excluir Receita'
+        like_recipe: 'Favoritar'
+        unlike_recipe: 'Não favoritar'
       titles:
         new_recipe: 'Nova Receita'
         edit_recipe: 'Editar Receita'

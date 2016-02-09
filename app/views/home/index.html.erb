@@ -1,4 +1,7 @@
-<span class="error_message"><%= flash[:notice] %></span>
+<span class="notice_message"><%= flash[:notice] %></span>
+<% if user_signed_in? %>
+  <p><%= link_to t('users.menu.links.liked_recipes'), favorite_recipes_path %> </p>
+<% end %>
 <% @recipes.each do |recipe| %>
   <p><%= t('recipes.fields.recipe_name') %>: <%= recipe.name %></p>
   <p><%= t('recipes.fields.difficult') %>: <%= recipe.difficult %></p>

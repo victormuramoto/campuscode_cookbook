@@ -10,6 +10,13 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
+  factory :user_recipe do
+    recipe_id 1
+    user_id   1
+  end
+end
+
+FactoryGirl.define do
   factory :admin do
     email 'victor.muramoto@gmail.com'
     password '12345678'

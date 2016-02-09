@@ -7,6 +7,10 @@ en:
         alert: 'Warning: The fields cannot be blank'
       destroy:
         notice: 'Recipe was successfully destroyed'
+      like:
+          notice: 'Recipe was successfully liked'
+      unlike:
+          notice: 'Recipe was successfully unliked'
     kitchens:
       create:
         alert: 'Warning: The fields cannot be blank'

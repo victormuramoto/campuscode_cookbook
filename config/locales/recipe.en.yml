@@ -16,6 +16,8 @@ en:
         create_recipe: 'Create Recipe'
         edit_recipe: 'Edit Recipe'
         destroy_recipe: 'Delete Recipe'
+        like_recipe: 'Like'
+        unlike_recipe: 'Unlike'
       titles:
         new_recipe: 'New Recipe'
         edit_recipe: 'Edit Recipe'

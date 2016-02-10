@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_and_belongs_to_many :kitchen
+  validates :first_name,:last_name, presence: true
 end

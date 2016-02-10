@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209181120) do
+ActiveRecord::Schema.define(version: 20160210132400) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20160209181120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "kitchens_users", id: false, force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "kitchen_id", null: false
+  end
+
+  add_index "kitchens_users", ["kitchen_id", "user_id"], name: "index_kitchens_users_on_kitchen_id_and_user_id"
+  add_index "kitchens_users", ["user_id", "kitchen_id"], name: "index_kitchens_users_on_user_id_and_kitchen_id"
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -96,11 +104,9 @@ ActiveRecord::Schema.define(version: 20160209181120) do
     t.string   "city",                   default: "", null: false
     t.string   "facebook"
     t.string   "twitter"
-    t.integer  "food_preference_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["food_preference_id"], name: "index_users_on_food_preference_id"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

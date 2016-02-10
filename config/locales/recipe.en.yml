@@ -12,6 +12,7 @@ en:
         kitchen: 'Cuisine'
         ingredients: 'Ingredients'
         description: 'Instructions'
+        user_owner: 'Owner'
       buttons:
         create_recipe: 'Create Recipe'
         edit_recipe: 'Edit Recipe'

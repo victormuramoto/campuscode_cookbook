@@ -12,6 +12,7 @@ pt-BR:
         kitchen: 'Cozinha'
         ingredients: 'Ingredientes'
         description: 'Preparo'
+        user_owner: 'Receita de'
       buttons:
         create_recipe: 'Criar Receita'
         edit_recipe: 'Editar Receita'

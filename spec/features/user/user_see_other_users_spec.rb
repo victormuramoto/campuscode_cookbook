@@ -7,12 +7,12 @@ feature 'User see other users profile' do
 
     click_on recipe.user.first_name
 
-    expect(page).to have_content recipe1.user.first_name
-    expect(page).to have_content recipe1.user.last_name
-    expect(page).to have_content recipe1.user.email
-    expect(page).to have_content recipe1.user.city
-    expect(page).to have_content recipe1.user.facebook
-    expect(page).to have_content recipe1.user.twitter
+    expect(page).to have_content recipe.user.first_name
+    expect(page).to have_content recipe.user.last_name
+    expect(page).to have_content recipe.user.email
+    expect(page).to have_content recipe.user.city
+    expect(page).to have_content recipe.user.facebook
+    expect(page).to have_content recipe.user.twitter
   end
   scenario 'success with login' do
     user = login_user
@@ -27,11 +27,11 @@ feature 'User see other users profile' do
 
     click_on recipe.user.first_name
 
-    expect(page).to have_content recipe1.user.first_name
-    expect(page).to have_content recipe1.user.last_name
-    expect(page).to have_content recipe1.user.email
-    expect(page).to have_content recipe1.user.city
-    expect(page).to have_content recipe1.user.facebook
-    expect(page).to have_content recipe1.user.twitter
+    expect(page).to have_content recipe.user.first_name
+    expect(page).to have_content recipe.user.last_name
+    expect(page).to have_content recipe.user.email
+    expect(page).to have_content recipe.user.city
+    expect(page).to have_content recipe.user.facebook
+    expect(page).to have_content recipe.user.twitter
   end
 end

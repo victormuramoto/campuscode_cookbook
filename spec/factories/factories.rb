@@ -17,6 +17,13 @@ FactoryGirl.define do
 end
 
 FactoryGirl.define do
+  factory :kitchens_user do
+    kitchen_id 1
+    user_id   1
+  end
+end
+
+FactoryGirl.define do
   factory :admin do
     email 'victor.muramoto@gmail.com'
     password '12345678'
@@ -27,6 +34,12 @@ FactoryGirl.define do
   factory :user do
     email 'victor.muramoto@gmail.com'
     password '12345678'
+    password_confirmation '12345678'
+    first_name 'Victor'
+    last_name 'muramoto'
+    city 'São Paulo'
+    facebook 'www.facebook.com.br'
+    twitter 'www.twitter.com.br'
   end
 end
 

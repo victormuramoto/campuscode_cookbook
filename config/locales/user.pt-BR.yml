@@ -4,18 +4,26 @@ pt-BR:
     menu:
       links:
         liked_recipes: 'Minhas Receitas Favoritas'
+        back: 'Voltar'
     fields:
       first_name: 'Primeiro Nome'
       last_name: 'Último Nome'
       city: 'Cidade'
       facebook: 'Facebook'
       twitter: 'Twitter'
-      kitchens: 'Cozinhas:'
+      kitchens: 'Cozinhas'
       email: 'Email'
       password: 'Senha'
       minimum_password: 'Caracteres mínimos'
       confirm_password: 'Confirme Sua Senha'
     buttons:
       sign_up: 'Cadastrar'
+      update: 'Atualizar'
+      cancel: 'Excluir minha conta'
     titles:
       sign_up: 'Cadastro'
+      edit: 'Editar Cadastro'
+      cancel: 'Excluir sua conta?'
+      unhappy: 'Infeliz?'
+    tips:
+      leave_blank: "(Deixe em branco, caso não queira mudar sua senha)"

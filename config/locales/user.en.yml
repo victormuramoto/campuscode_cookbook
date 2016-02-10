@@ -4,6 +4,7 @@ en:
     menu:
       links:
         liked_recipes: 'My Liked Recipes'
+        back: 'Back'
     fields:
       first_name: 'First Name'
       last_name: 'Last Name'
@@ -17,5 +18,12 @@ en:
       confirm_password: 'Password Confirmation'
     buttons:
       sign_up: 'Sign up'
+      update: 'Update'
+      cancel: 'Cancel my Account'
     titles:
       sign_up: 'Sign up'
+      edit: 'Edit User'
+      cancel: 'Cancel my Account?'
+      unhappy: 'Unhappy?'
+    tips:
+      leave_blank: "(leave blank if you don't want to change it)"

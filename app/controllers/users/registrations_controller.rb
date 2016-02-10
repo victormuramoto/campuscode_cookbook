@@ -3,24 +3,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
   def create
     super
+    @user = User.create(sign_up_params)
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -36,33 +37,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+   private
+
+  def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :city, :facebook, :twitter, {kitchen_ids: []})
+  end
+
+  def account_update_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :city, :facebook, :twitter, {kitchen_ids: []})
+  end
+
   protected
 
   def update_resource(resource, params)
    resource.update_without_password(params)
  end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :first_name
-    devise_parameter_sanitizer.for(:sign_up) << :last_name
-    devise_parameter_sanitizer.for(:sign_up) << :city
-    devise_parameter_sanitizer.for(:sign_up) << :facebook
-    devise_parameter_sanitizer.for(:sign_up) << :twitter
-    devise_parameter_sanitizer.for(:sign_up) << {kitchen_ids: []}
-
-  end
-
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update) << :first_name
-    devise_parameter_sanitizer.for(:account_update) << :last_name
-    devise_parameter_sanitizer.for(:account_update) << :city
-    devise_parameter_sanitizer.for(:account_update) << :facebook
-    devise_parameter_sanitizer.for(:account_update) << :twitter
-    devise_parameter_sanitizer.for(:account_update) << :current_password
-    devise_parameter_sanitizer.for(:account_update) << {kitchen_ids: []}
-  end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)

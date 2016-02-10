@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-10T15:38:11-02:00">2016-02-10T15:38:11-02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-02-10T15:55:49-02:00">2016-02-10T15:55:49-02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.39
+         2.43
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>23.8</td>
+        <td>24.4</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>36.0</td>
+        <td>36.7</td>
       </tr>
       
       <tr>
@@ -237,7 +237,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>2.2</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -283,7 +283,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.52
+         2.56
        </span>
     </span> hits/line)
   </h2>
@@ -315,7 +315,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>23.8</td>
+        <td>24.4</td>
       </tr>
       
       <tr>
@@ -345,7 +345,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>36.0</td>
+        <td>36.7</td>
       </tr>
       
       <tr>
@@ -440,7 +440,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.39
+         1.42
        </span>
     </span> hits/line)
   </h2>
@@ -522,7 +522,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>2.2</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -753,8 +753,8 @@
           <code class="ruby">  def set_locale</code>
         </li>
       
-        <li class="covered" data-hits="183" data-linenumber="9">
-          <span class="hits">183</span>
+        <li class="covered" data-hits="188" data-linenumber="9">
+          <span class="hits">188</span>
           
           <code class="ruby">    I18n.locale = params[:locale] || I18n.default_locale</code>
         </li>
@@ -1167,32 +1167,32 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="3">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="51" data-linenumber="3">
+          <span class="hits">51</span>
           
           <code class="ruby">    @liked_recipes = Recipe.all.where(&#39;likes &gt; 0&#39;).order(&#39;likes DESC&#39;).limit(5)</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="4">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="51" data-linenumber="4">
+          <span class="hits">51</span>
           
           <code class="ruby">    @recipes = Recipe.all.order(&#39;id DESC&#39;).limit(20)</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="5">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="51" data-linenumber="5">
+          <span class="hits">51</span>
           
           <code class="ruby">    @kitchens = Kitchen.all</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="6">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="51" data-linenumber="6">
+          <span class="hits">51</span>
           
           <code class="ruby">    @food_preferences = FoodPreference.all</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="7">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="51" data-linenumber="7">
+          <span class="hits">51</span>
           
           <code class="ruby">    @food_types = FoodType.all</code>
         </li>
@@ -1923,8 +1923,8 @@
           <code class="ruby">  def set_recipe</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="88">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="26" data-linenumber="88">
+          <span class="hits">26</span>
           
           <code class="ruby">    @recipe = Recipe.find(params[:id])</code>
         </li>
@@ -3663,8 +3663,8 @@
           <code class="ruby">  def check_like?(user)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="12">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">    UserRecipe.where(&quot;recipe_id = #{id} and user_id = #{user.id}&quot;) == []</code>
         </li>

@@ -24,3 +24,9 @@ en:
         edit_recipe: 'Edit Recipe'
       permit:
         not_allowed: 'Desculpe, você só pode editar receitas que pertencem lhe pertencem.'
+      email:
+        send_email: 'Send for a friend!'
+        close: 'Close'
+        destination_email: 'Destination Mail Address'
+        cancel: 'Cancel'
+        send: 'Send Email'

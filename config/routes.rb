@@ -9,6 +9,12 @@ Rails.application.routes.draw do
     member do
       post 'unlike'
     end
+    member do
+      get 'unlike'
+    end
+    member do
+      get 'email'
+    end
     collection do
       get 'favorite'
     end

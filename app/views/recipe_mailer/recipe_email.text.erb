@@ -1,0 +1,12 @@
+<%= t('recipes.fields.recipe_name') %>: <%= @recipe.name %>
+
+-------------------------------------------------------------------------------------------------------------------
+<%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> <%= t('recipes.fields.people') %>
+<%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %>
+<%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %>
+<%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %>
+<%= t('recipes.fields.food_preference') %>: <%= @recipe.food_preference.name %>
+<%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %>
+<%= t('recipes.fields.ingredients') %>:  <%= @recipe.ingredients %>
+<%= t('recipes.fields.description') %>: <%= @recipe.description %>
+<%= t('recipes.fields.user_owner') %>: <%= @recipe.user.first_name %>

@@ -25,6 +25,22 @@
         1,
         null
       ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/mailers/recipe_mailer.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/victor/workspace/campuscode/exercises/social-recipes/app/mailers/application_mailer.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/home/victor/workspace/campuscode/exercises/social-recipes/app/controllers/application_controller.rb": [
         1,
         null,
@@ -237,6 +253,10 @@
         3,
         null,
         null,
+        null,
+        null,
+        null,
+        1,
         null,
         null,
         null,
@@ -587,6 +607,6 @@
         0
       ]
     },
-    "timestamp": 1455133384
+    "timestamp": 1455141948
   }
 }

@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
                                     :destroy,
                                     :like,
                                     :unlike]
-  before_action :set_recipe_presenter, only: [:show]                                    
+  before_action :set_recipe_presenter, only: [:show]
   before_action :add_user_recipe, only: [:like]
   before_action :remove_user_recipe, only: [:unlike]
   before_action :set_collections, only: [:new, :create, :edit, :update]
@@ -54,6 +54,10 @@ class RecipesController < ApplicationController
       'INNER JOIN user_recipes ON recipes.id = user_recipes.recipe_id
        INNER JOIN users ON user_recipes.user_id = users.id')
                            .where("users.id = #{current_user.id}")
+  end
+
+  def email
+    destination = params[:destination]
   end
 
   private

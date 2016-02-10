@@ -11,5 +11,28 @@
 <p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
 <p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
 
+<%= button_tag t('recipes.email.send_email'), class:'btn btn-success btn-xs', data: { toggle: 'modal', target:"#emailModal" } %>
+
 <%= @recipe.check_destroy(current_user) %>
 <%= @recipe.inject_favorite_option(current_user) %>
+
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"><%= t('recipes.email.send_email') %></span></button>
+        <h4 class="modal-title"> <%= t('recipes.email.destination_email') %></h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag email_recipe_path(@recipe), method: :get, class: "form-horizontal" do %>
+              <%= label_tag 'destination', t('recipes.email.destination_email'), class: 'control-label' %>
+              <%= email_field_tag :destination, params[:destination], class: "form-control" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><%= t('recipes.email.cancel') %></button>
+           <%= submit_tag t('recipes.email.send'), name: nil, class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

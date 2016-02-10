@@ -1,26 +1,14 @@
 <span class="notice_message"><%= flash[:notice] %></span>
-<p><%= t('recipes.fields.recipe_name') %>: <%= @recipe.name %></p>
-<p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> Pessoa(s)</p>
-<p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
-<p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
-<p><%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %></p>
-<p><%= t('recipes.fields.food_preference') %>: <%= @recipe.food_preference.name %></p>
-<p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
-<p><%= t('recipes.fields.ingredients') %>:</p>  <p><%= @recipe.ingredients %></p>
-<p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
-<p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
-<p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
+<p><%= t('users.fields.first_name') %>: <%= @user.first_name %></p>
+<p><%= t('users.fields.last_name') %>: <%= @user.last_name %></p>
+<p><%= t('users.fields.email') %>: <%= @user.email %></p>
+<p><%= t('users.fields.city') %>: <%= @user.city %></p>
+<p><%= t('users.fields.facebook') %>: <%= @user.facebook %></p>
+<p><%= t('users.fields.twitter') %>: <%= @user.twitter %></p>
 
-<% if current_user == @recipe.user %>
-  <%= button_to t('recipes.buttons.destroy_recipe'), { action: "destroy", id: @recipe.id },
-                                  method: :delete, data: { confirm: "Are you sure?" } %>
+<p><%= t('users.fields.kitchens') %>: </p>
+<% @kitchens.each do |kitchen| %>
+  <p><%= kitchen.name %></p>
 <% end %>
-<% if user_signed_in? %>
-  <% if @recipe.check_like?(current_user) %>
-    <%= button_to t('recipes.buttons.like_recipe'), { action: "like", id: @recipe.id },
-                                method: :post, data: { confirm: "Are you sure?" } %>
-  <% else %>
-    <%= button_to t('recipes.buttons.unlike_recipe'), { action: "unlike", id: @recipe.id },
-                                   method: :post, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
+
+<%= render @user.recipes %>

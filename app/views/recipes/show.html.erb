@@ -1,6 +1,6 @@
 <span class="notice_message"><%= flash[:notice] %></span>
 <p><%= t('recipes.fields.recipe_name') %>: <%= @recipe.name %></p>
-<p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> Pessoa(s)</p>
+<p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> <%= t('recipes.fields.people') %> </p>
 <p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
 <p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
 <p><%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %></p>

@@ -4,3 +4,18 @@ pt-BR:
     menu:
       links:
         liked_recipes: 'Minhas Receitas Favoritas'
+    fields:
+      first_name: 'Primeiro Nome'
+      last_name: 'Último Nome'
+      city: 'Cidade'
+      facebook: 'Facebook'
+      twitter: 'Twitter'
+      kitchens: 'Cozinhas:'
+      email: 'Email'
+      password: 'Senha'
+      minimum_password: 'Caracteres mínimos'
+      confirm_password: 'Confirme Sua Senha'
+    buttons:
+      sign_up: 'Cadastrar'
+    titles:
+      sign_up: 'Cadastro'

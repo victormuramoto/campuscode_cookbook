@@ -1,6 +1,21 @@
 ---
-pt-BR:
+en:
   users:
     menu:
       links:
         liked_recipes: 'My Liked Recipes'
+    fields:
+      first_name: 'First Name'
+      last_name: 'Last Name'
+      city: 'City'
+      facebook: 'Facebook'
+      twitter: 'Twitter'
+      kitchens: 'Cuisines:'
+      email: 'Email'
+      password: 'Password'
+      minimum_password: 'characters minimum'
+      confirm_password: 'Password Confirmation'
+    buttons:
+      sign_up: 'Sign up'
+    titles:
+      sign_up: 'Sign up'

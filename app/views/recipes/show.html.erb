@@ -11,16 +11,5 @@
 <p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
 <p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
 
-<% if current_user == @recipe.user %>
-  <%= button_to t('recipes.buttons.destroy_recipe'), { action: "destroy", id: @recipe.id },
-                                  method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-<% if user_signed_in? %>
-  <% if @recipe.check_like?(current_user) %>
-    <%= button_to t('recipes.buttons.like_recipe'), { action: "like", id: @recipe.id },
-                                method: :post, data: { confirm: "Are you sure?" } %>
-  <% else %>
-    <%= button_to t('recipes.buttons.unlike_recipe'), { action: "unlike", id: @recipe.id },
-                                   method: :post, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
+<%= @recipe.check_destroy(current_user) %>
+<%= @recipe.inject_favorite_option(current_user) %>

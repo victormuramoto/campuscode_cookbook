@@ -8,6 +8,7 @@
     <p>
       <%= button_tag t('recipes.email.send_email'), class:'btn btn-success', data: { toggle: 'modal', target:"#emailModal" } %>
       <%= @recipe.check_destroy(current_user) %>
+      <%= @recipe.check_edit(current_user) %>
       <%= @recipe.inject_favorite_option(current_user) %>
     </p>
   </section>

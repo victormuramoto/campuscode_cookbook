@@ -11,6 +11,15 @@ class RecipePresenter < SimpleDelegator
     target == self || recipe.eql?(target)
   end
 
+  def check_edit(user)
+    if user == @recipe.user
+      helpers.link_to t('recipes.buttons.edit_recipe'),
+                      edit_recipe_path(recipe),
+                      method: :get,
+                      class: 'btn btn-default'
+    end
+  end
+
   def check_destroy(user)
     if user == @recipe.user
       helpers.link_to t('recipes.buttons.destroy_recipe'),

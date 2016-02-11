@@ -22,21 +22,39 @@
         <ul class="nav navbar-nav">
           <li><%= link_to t('users.menu.links.home'), root_path %></li>
           <% if user_signed_in? %>
-            <li><%= link_to t('recipes.buttons.create_recipe'), new_recipe_path, class:"navbar-brand" %></li>
+            <li><%= link_to t('recipes.buttons.create_recipe'), new_recipe_path %></li>
+          <% end %>
+          <% if admin_signed_in? %>
+            <li><%= link_to t('food_type.buttons.create_food_type'), new_food_type_path %></li>
+            <li><%= link_to t('food_preference.buttons.create_food_preference'), new_food_preference_path%></li>
+            <li><%= link_to t('kitchen.buttons.create_kitchen'), new_kitchen_path %></li>
           <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuário Logado<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to t('users.menu.links.edit'), edit_user_registration_path %></li>
+                <li><%= link_to t('users.menu.links.liked_recipes'), favorite_recipes_path %></li>
+                <li><%= link_to t('users.menu.links.logout_user'), destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% elsif admin_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuário Logado <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Logado<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><%= link_to t('users.menu.links.edit'), edit_user_registration_path %></li>
-              <li><%= link_to t('users.menu.links.liked_recipes'), favorite_recipes_path %></li>
-              <li><%= link_to t('users.menu.links.logout'), destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to t('users.menu.links.logout_admin'), destroy_admin_session_path, method: :delete %></li>
             </ul>
           </li>
           <% else %>
-            <li> <%= link_to t('users.menu.links.login'), new_user_session_path, method: :get %> </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li> <%= link_to t('users.menu.links.login_user'), new_user_session_path, method: :get %> </li>
+                <li> <%= link_to t('users.menu.links.login_admin'), new_admin_session_path, method: :get %> </li>
+              </ul>
+            </li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'unlike'
     end
     member do
-      get 'email'
+      post 'email'
     end
     collection do
       get 'favorite'

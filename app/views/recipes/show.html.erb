@@ -24,7 +24,7 @@
         <h4 class="modal-title"> <%= t('recipes.email.destination_email') %></h4>
       </div>
       <div class="modal-body">
-        <%= form_tag email_recipe_path(@recipe), method: :get, class: "form-horizontal" do %>
+        <%= form_tag email_recipe_path(@recipe), method: :post, class: "form-horizontal" do %>
               <%= label_tag 'destination', t('recipes.email.destination_email'), class: 'control-label' %>
               <%= email_field_tag :destination, params[:destination], class: "form-control" %>
       </div>

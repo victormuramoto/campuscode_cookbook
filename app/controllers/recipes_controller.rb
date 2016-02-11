@@ -57,7 +57,10 @@ class RecipesController < ApplicationController
   end
 
   def email
-    destination = params[:destination]
+    @destination = params[:destination]
+    @recipe = Recipe.find(params[:id])
+    RecipeMailer.recipe_email(@recipe,@destination).deliver_now
+    respond_with @recipe
   end
 
   private

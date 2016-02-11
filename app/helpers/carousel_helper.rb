@@ -55,7 +55,7 @@ end
       #If you see me after look this `HTML CODE`, remember me to make it DRY....or just be rude with me lol.
       context << "<div class='info'><p><h2>#{recipe.name}</h2></p>".html_safe + "<p><%= bla: #{recipe.number_people}</p>".html_safe + "<p>Empresa:#{recipe.time_prepare}</p>".html_safe + "<p>Categoria:#{recipe.difficult}</p>".html_safe + "<p>Contrato:#{recipe.kitchen}</p></div>".html_safe
       if recipe.image != nil
-        context << image_tag(attachment_url(recipe, :image, :fill, 300,300), class:'img-circle')
+        context << image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle')
       else
         context << image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle')
       end

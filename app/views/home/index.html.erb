@@ -1,25 +1,39 @@
 <span class="notice_message"><%= flash[:notice] %></span>
-<%= carousel_for(@liked_recipes) %>
-<section id='recipes'>
-  <% @recipes.each do |recipe| %>
-  <div class='recipe'>
-    <div class='logo'>
-      <% if recipe.image != nil %>
-      <%=  image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle') %>
-      <% else %>
-      <%=  image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle') %>
-      <% end %>
-    </div>
-    <div class='info'>
-      <p> <h1><%= recipe.name %></h1></p>
-      <p><%= t('recipes.fields.difficult') %>: <%= recipe.difficult %></p>
-      <p><%= t('recipes.fields.food_type') %>: <%= recipe.food_type.name %></p>
-      <p><%= t('recipes.fields.food_preference') %>: <%= recipe.food_preference.name %></p>
-      <p><%= t('recipes.fields.kitchen') %>: <%= recipe.kitchen.name %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <%= carousel_for(@liked_recipes) %>
     </div>
   </div>
-  <% end %>
+</div>
+<section id='recipes'>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <% @recipes.each do |recipe| %>
+        <div class='recipe'>
+          <div class='logo'>
+            <% if recipe.image != nil %>
+            <%=  image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle') %>
+            <% else %>
+            <%=  image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle') %>
+            <% end %>
+          </div>
+          <div class='info'>
+            <p> <h1><%= recipe.name %></h1></p>
+            <p><%= t('recipes.fields.difficult') %>: <%= recipe.difficult %></p>
+            <p><%= t('recipes.fields.food_type') %>: <%= recipe.food_type.name %></p>
+            <p><%= t('recipes.fields.food_preference') %>: <%= recipe.food_preference.name %></p>
+            <p><%= t('recipes.fields.kitchen') %>: <%= recipe.kitchen.name %></p>
+            <p><%= link_to t('recipes.fields.see_more'), recipe_path(recipe), class: "btn btn-success" %></p>
+          </div>
+        </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
 </section>
+
 <section>
   <div class="row">
     <div class="col-sm-3">
@@ -58,7 +72,6 @@
       </div>
     </div>
     <div class="col-sm-9">
-      Main content goes here
     </div>
   </div>
 </section>

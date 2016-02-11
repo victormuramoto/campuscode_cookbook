@@ -3,8 +3,13 @@ en:
   users:
     menu:
       links:
+        cookbook: 'Cookbook'
+        home: 'Home'
         liked_recipes: 'My Liked Recipes'
         back: 'Back'
+        edit: 'Edit Profile'
+        logout: 'Sign out'
+        login: 'Sign in'
     fields:
       first_name: 'First Name'
       last_name: 'Last Name'

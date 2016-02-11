@@ -3,8 +3,13 @@ pt-BR:
   users:
     menu:
       links:
+        cookbook: 'Cookbook'
+        home: 'Início'
         liked_recipes: 'Minhas Receitas Favoritas'
         back: 'Voltar'
+        edit: 'Editar Perfil'
+        logout: 'Sair'
+        login: 'Entrar'
     fields:
       first_name: 'Primeiro Nome'
       last_name: 'Último Nome'

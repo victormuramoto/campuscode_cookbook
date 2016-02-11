@@ -1,0 +1,110 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+a{
+  font-size: 20px;
+}
+
+body{
+  background-color: #F1D8C4;
+}
+
+.recipe{
+  display: inline-block;
+  width: 30%;
+  height: 50%;
+  margin: 35px 1% auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.recipe .info{
+  padding-top: 10px;
+}
+
+.recipe .logo {
+  padding-left: 20px
+}
+
+.recipe h2{
+  font-size: 24px;
+}
+.recipe p{
+  font-size: 20px;
+}
+
+.carousel{
+  height:300px;
+  background-color: #BF4633;
+  padding-left: 150px;
+}
+
+
+.carousel-inner .item .info{
+  float:right;
+  width: 50%;
+  color: #fff;
+}
+
+.carousel-inner .item p{
+  font-size:20px;
+}
+.carousel-inner .item img{
+  float:left;
+  width:  280px;
+  height: 280px;
+  margin-left:300px;
+
+}
+
+.navbar{
+  margin: 0;
+}
+
+
+#recipes{
+  float:left;
+  width: 70%;
+  margin-bottom: 70px;
+}
+
+#filters{
+  float:right;
+  width: 30%;
+}
+
+#filters div{
+  display: block;
+  margin-bottom: 55px;
+}
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .sidebar-nav .navbar li h4 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: #555;
+    background-color: #E7E7E7;
+  }
+  .col-sm-3{
+    width: 30%
+  }
+}

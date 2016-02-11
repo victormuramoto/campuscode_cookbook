@@ -14,9 +14,9 @@
         <div class='recipe'>
           <div class='logo'>
             <% if recipe.image != nil %>
-            <%=  image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle') %>
+            <%=  image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle', alt:"#{recipe.name} Image") %>
             <% else %>
-            <%=  image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle') %>
+            <%=  image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle', alt:"#{recipe.name} Image") %>
             <% end %>
           </div>
           <div class='info'>

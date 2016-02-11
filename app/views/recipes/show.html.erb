@@ -1,21 +1,33 @@
 <span class="notice_message"><%= flash[:notice] %></span>
-<p><%= t('recipes.fields.recipe_name') %>: <%= @recipe.name %></p>
-<p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> <%= t('recipes.fields.people') %> </p>
-<p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
-<p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
-<p><%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %></p>
-<p><%= t('recipes.fields.food_preference') %>: <%= @recipe.food_preference.name %></p>
-<p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
-<p><%= t('recipes.fields.ingredients') %>:</p>  <p><%= @recipe.ingredients %></p>
-<p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
-<p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
-<p><%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg") %></p>
-
-<%= button_tag t('recipes.email.send_email'), class:'btn btn-success btn-xs', data: { toggle: 'modal', target:"#emailModal" } %>
-
-<%= @recipe.check_destroy(current_user) %>
-<%= @recipe.inject_favorite_option(current_user) %>
-
+<div class=recipe-details>
+  <section class="recipe-title">
+    <p><h1><%= @recipe.name %></h1>
+  </section>
+  <section class="recipe-options">
+    <p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
+    <p>
+      <%= button_tag t('recipes.email.send_email'), class:'btn btn-success btn-xs', data: { toggle: 'modal', target:"#emailModal" } %>
+      <%= @recipe.check_destroy(current_user) %>
+      <%= @recipe.inject_favorite_option(current_user) %>
+    </p>
+  </section>
+  <section class="recipe-image">
+    <%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg"), alt:"#{@recipe.name} Image" %>
+    <p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> <%= t('recipes.fields.people') %> </p>
+    <p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
+    <p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
+    <p><%= t('recipes.fields.food_type') %>: <%= @recipe.food_type.name %></p>
+    <p><%= t('recipes.fields.food_preference') %>: <%= @recipe.food_preference.name %></p>
+    <p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
+  </section>
+  <section class="recipe-ingredients">
+    <p class='ingredients-title'> <%= t('recipes.fields.ingredients') %>:</p>
+    <p><%= @recipe.ingredients %></p>
+  </section>
+  <section class="recipe-description">
+    <p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
+  </section>
+</div>
 <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

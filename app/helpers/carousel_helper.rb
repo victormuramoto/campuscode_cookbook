@@ -53,11 +53,18 @@ end
 
       #Ok, this is not good, but believe me, it works.
       #If you see me after look this `HTML CODE`, remember me to make it DRY....or just be rude with me lol.
-      context << "<div class='info'><p><h2>#{recipe.name}</h2></p>".html_safe + "<p><%= bla: #{recipe.number_people}</p>".html_safe + "<p>Empresa:#{recipe.time_prepare}</p>".html_safe + "<p>Categoria:#{recipe.difficult}</p>".html_safe + "<p>Contrato:#{recipe.kitchen}</p></div>".html_safe
+      number_people = I18n.t('recipes.fields.number_people')
+      time_prepare = I18n.t('recipes.fields.time_prepare')
+      difficult = I18n.t('recipes.fields.difficult')
+      kitchen = I18n.t('recipes.fields.kitchen')
+      likes = I18n.t('recipes.fields.favorites_number')
+
+
+      context << "<div class='info'><h1>#{recipe.name}</h1>".html_safe + "<p>#{number_people}: #{recipe.number_people}</p>".html_safe + "<p>#{time_prepare}:#{recipe.time_prepare}</p>".html_safe + "<p>#{difficult}:#{recipe.difficult}</p>".html_safe + "<p>#{kitchen}:#{recipe.kitchen.name}</p>".html_safe + "<p>#{likes}:#{recipe.likes}</p></div>".html_safe
       if recipe.image != nil
-        context << image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle')
+        context << image_tag(attachment_url(recipe, :image, :fill, 200,200), class:'img-circle img-responsive')
       else
-        context << image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle')
+        context << image_tag("cookbook.jpg", height: '200', width: '200', class:'img-circle img-responsive')
       end
       content_tag(:div, safe_join(context), options)
     end

@@ -14,6 +14,7 @@ en:
         description: 'Instructions'
         user_owner: 'Owner'
         see_more: 'See More'
+        favorites_number: 'Likes'
       buttons:
         create_recipe: 'Create Recipe'
         edit_recipe: 'Edit Recipe'

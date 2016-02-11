@@ -14,6 +14,7 @@ pt-BR:
         description: 'Preparo'
         user_owner: 'Receita de'
         see_more: 'Ver mais'
+        favorites_number: 'Votos'
       buttons:
         create_recipe: 'Criar Receita'
         edit_recipe: 'Editar Receita'

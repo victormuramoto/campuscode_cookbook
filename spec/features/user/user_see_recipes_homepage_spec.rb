@@ -37,14 +37,14 @@ feature 'User see recipes in homepage' do
     expect(page).to have_content recipe1.food_type.name
     expect(page).to have_content recipe1.food_preference.name
     expect(page).to have_content recipe1.kitchen.name
-    expect(page).to have_css("img[src*='image.jpg']")
+    expect(page).to have_css("img[src*='image']")
 
     expect(page).to have_content recipe2.name
     expect(page).to have_content recipe2.difficult
     expect(page).to have_content recipe2.food_type.name
     expect(page).to have_content recipe2.food_preference.name
     expect(page).to have_content recipe2.kitchen.name
-    expect(page).to have_css("img[src*='image.jpg']")
+    expect(page).to have_css("img[src*='image']")
   end
 
   scenario 'see last 19 recipes created' do

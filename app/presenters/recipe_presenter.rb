@@ -15,7 +15,8 @@ class RecipePresenter < SimpleDelegator
     if user == @recipe.user
       helpers.link_to t('recipes.buttons.destroy_recipe'),
                       recipe_path(recipe),
-                      method: :delete, data: { confirm: 'Are you sure?' }
+                      method: :delete, data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-danger'
     end
   end
 
@@ -24,11 +25,11 @@ class RecipePresenter < SimpleDelegator
       if @recipe.check_like?(user)
         helpers.link_to t('recipes.buttons.like_recipe'),
                         like_recipe_path(recipe),
-                        method: :post, data: { confirm: 'Are you sure?' }
+                        method: :post, class: 'btn btn-warning'
       else
         helpers.link_to t('recipes.buttons.unlike_recipe'),
                         unlike_recipe_path(recipe),
-                        method: :post, data: { confirm: 'Are you sure?' }
+                        method: :post, class: 'btn btn-warning'
       end
     end
   end

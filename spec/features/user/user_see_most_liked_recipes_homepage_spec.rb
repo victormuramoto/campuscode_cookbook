@@ -37,7 +37,7 @@ feature 'User see most liked recipes in homepage' do
                      likes: 1)
 
     visit root_path
-    within '.favorites' do
+    within '#favorites' do
       expect(page).to have_content recipe1.name
       expect(page).to have_content recipe2.name
       expect(page).to have_content recipe3.name
@@ -85,7 +85,7 @@ feature 'User see most liked recipes in homepage' do
                      likes: 1)
 
     visit root_path
-    within '.favorites' do
+    within '#favorites' do
       expect(page).to have_content recipe1.name
       expect(page).to have_content recipe2.name
       expect(page).to have_content recipe3.name

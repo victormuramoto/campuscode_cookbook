@@ -6,13 +6,13 @@
   <section class="recipe-options">
     <p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
     <p>
-      <%= button_tag t('recipes.email.send_email'), class:'btn btn-success btn-xs', data: { toggle: 'modal', target:"#emailModal" } %>
+      <%= button_tag t('recipes.email.send_email'), class:'btn btn-success', data: { toggle: 'modal', target:"#emailModal" } %>
       <%= @recipe.check_destroy(current_user) %>
       <%= @recipe.inject_favorite_option(current_user) %>
     </p>
   </section>
-  <section class="recipe-image">
-    <%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg"), alt:"#{@recipe.name} Image" %>
+  <section class="recipe-info">
+    <%= image_tag attachment_url(@recipe, :image, :fill, 300, 300, format: "jpg"), class:'img-circle', alt:"#{@recipe.name} Image" %>
     <p><%= t('recipes.fields.number_people') %>: <%= @recipe.number_people %> <%= t('recipes.fields.people') %> </p>
     <p><%= t('recipes.fields.time_prepare') %>: <%= @recipe.time_prepare %></p>
     <p><%= t('recipes.fields.difficult') %>: <%= @recipe.difficult %></p>
@@ -21,9 +21,8 @@
     <p><%= t('recipes.fields.kitchen') %>: <%= @recipe.kitchen.name %></p>
   </section>
   <section class="recipe-ingredients">
-    <p class='ingredients-title'> <%= t('recipes.fields.ingredients') %>:</p>
+    <p> <%= t('recipes.fields.ingredients') %>:</p>
     <p><%= @recipe.ingredients %></p>
-  </section>
   <section class="recipe-description">
     <p><%= t('recipes.fields.description') %>:</p> <p><%= @recipe.description %></p>
   </section>

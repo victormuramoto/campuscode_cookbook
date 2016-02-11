@@ -91,8 +91,6 @@ feature 'User see other users profile' do
 
     user_owner.recipes.each do |recipe|
       expect(page).to have_content recipe.name
-      expect(page).to have_content recipe.ingredients
-      expect(page).to have_content recipe.description
     end
   end
 end

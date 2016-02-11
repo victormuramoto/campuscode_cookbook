@@ -14,6 +14,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   border-bottom: 1px solid #000;
+  font-size:30px;
 }
 
 .recipe-title h1{
@@ -27,15 +28,14 @@ body{
 }
 
 .recipe-info img{
-
   margin-left: auto;
   margin-right: auto;
 }
 .recipe-info{
-  padding: 20px;
-  text-align: center;
   font-size:30px;
-  display:inline-block;
+  display:block;
+  border-bottom: 1px solid #000;
+  text-align:center;
 }
 
 .recipe-options{
@@ -46,13 +46,9 @@ body{
   border-bottom: 1px solid #000;
 }
 .recipe-description{
+  font-size: 25px;
+  border-top: 1px solid #000;
 }
-
-.ingredients-title{
-  border-bottom: 1px solid #000;
-  font-size:30px;
-}
-
 
 .recipe{
   display: inline-block;

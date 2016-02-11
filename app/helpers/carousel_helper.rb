@@ -57,7 +57,6 @@ end
       difficult = I18n.t('recipes.fields.difficult')
       kitchen = I18n.t('recipes.fields.kitchen')
       likes = I18n.t('recipes.fields.favorites_number')
-
       context << "<div class='info'><h1>#{recipe.name}</h1>".html_safe + "<p>#{number_people}: #{recipe.number_people}</p>".html_safe + "<p>#{time_prepare}:#{recipe.time_prepare}</p>".html_safe + "<p>#{difficult}:#{recipe.difficult}</p>".html_safe + "<p>#{kitchen}:#{recipe.kitchen.name}</p>".html_safe + "<p>#{likes}:#{recipe.likes}</p></div>".html_safe
       if !recipe.image.nil?
         context << image_tag(attachment_url(recipe, :image, :fill, 200, 200), class: 'img-circle img-responsive')

@@ -1,3 +1,4 @@
-<h1><%= t('food_type.fields.food_type_name') %>: <%= @food_type.name %></h1>
+<%= link_to t('users.menu.links.back'), :back %>
+<h1 class="title"><%= t('food_type.fields.food_type_name') %>: <%= @food_type.name %></h1>
 
 <%= render @food_type.recipes %>

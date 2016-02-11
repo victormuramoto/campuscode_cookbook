@@ -1,8 +1,6 @@
 <span class="notice_message"><%= flash[:notice] %></span>
 <div class=recipe-details>
-  <section class="recipe-title">
-    <p><h1><%= @recipe.name %></h1>
-  </section>
+  <p><h1 class="title"><%= @recipe.name %></h1>
   <section class="recipe-options">
     <p><%= t('recipes.fields.user_owner') %>: <%= link_to @recipe.user.first_name, user_path(@recipe.user) %></p>
     <p>

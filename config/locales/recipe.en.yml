@@ -30,3 +30,4 @@ en:
         destination_email: 'Destination Mail Address'
         cancel: 'Cancel'
         send: 'Send Email'
+        success: 'Mail Successfully sent'

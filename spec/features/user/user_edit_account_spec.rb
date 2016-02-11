@@ -1,14 +1,14 @@
 require 'rails_helper'
 feature 'User edit account' do
   scenario 'success' do
-    kitchen1 = create(:kitchen, name:'Paulista')
-    kitchen2 = create(:kitchen, name:'Gaucha')
-    kitchen3 = create(:kitchen, name:'Nordestina')
+    kitchen1 = create(:kitchen, name: 'Paulista')
+    kitchen2 = create(:kitchen, name: 'Gaucha')
+    kitchen3 = create(:kitchen, name: 'Nordestina')
 
     new_user = build(:user,
-                     email:'rotciv@gmail.com',
-                     password:'12345678',
-                     password_confirmation:'12345678',
+                     email: 'rotciv@gmail.com',
+                     password: '12345678',
+                     password_confirmation: '12345678',
                      first_name: 'rotciv',
                      last_name: 'Muramoto',
                      city: 'Porto Alegre',
@@ -17,7 +17,7 @@ feature 'User edit account' do
 
     user = login_user
     create(:kitchens_user, kitchen_id: kitchen1.id,
-                         user_id: user.id)
+                           user_id: user.id)
 
     visit edit_user_registration_path
 
@@ -48,14 +48,14 @@ feature 'User edit account' do
     expect(find('#user_kitchen_ids_3')).to_not be_checked
   end
   scenario 'success unchecking kitchens' do
-    kitchen1 = create(:kitchen, name:'Paulista')
-    kitchen2 = create(:kitchen, name:'Gaucha')
-    kitchen3 = create(:kitchen, name:'Nordestina')
+    kitchen1 = create(:kitchen, name: 'Paulista')
+    kitchen2 = create(:kitchen, name: 'Gaucha')
+    kitchen3 = create(:kitchen, name: 'Nordestina')
 
     new_user = build(:user,
-                     email:'rotciv@gmail.com',
-                     password:'12345678',
-                     password_confirmation:'12345678',
+                     email: 'rotciv@gmail.com',
+                     password: '12345678',
+                     password_confirmation: '12345678',
                      first_name: 'rotciv',
                      last_name: 'Muramoto',
                      city: 'Porto Alegre',
@@ -64,11 +64,11 @@ feature 'User edit account' do
 
     user = login_user
     create(:kitchens_user, kitchen_id: kitchen1.id,
-                         user_id: user.id)
+                           user_id: user.id)
     create(:kitchens_user, kitchen_id: kitchen2.id,
-                        user_id: user.id)
+                           user_id: user.id)
     create(:kitchens_user, kitchen_id: kitchen3.id,
-                        user_id: user.id)
+                           user_id: user.id)
 
     visit edit_user_registration_path
 
@@ -100,14 +100,14 @@ feature 'User edit account' do
     expect(find('#user_kitchen_ids_3')).to be_checked
   end
   scenario 'fields cannot be blank' do
-    kitchen1 = create(:kitchen, name:'Paulista')
-    kitchen2 = create(:kitchen, name:'Gaucha')
-    kitchen3 = create(:kitchen, name:'Nordestina')
+    kitchen1 = create(:kitchen, name: 'Paulista')
+    kitchen2 = create(:kitchen, name: 'Gaucha')
+    kitchen3 = create(:kitchen, name: 'Nordestina')
 
     new_user = build(:user,
-                     email:'rotciv@gmail.com',
-                     password:'12345678',
-                     password_confirmation:'12345678',
+                     email: 'rotciv@gmail.com',
+                     password: '12345678',
+                     password_confirmation: '12345678',
                      first_name: 'rotciv',
                      last_name: 'Muramoto',
                      city: 'Porto Alegre',
@@ -116,7 +116,7 @@ feature 'User edit account' do
 
     user = login_user
     create(:kitchens_user, kitchen_id: kitchen1.id,
-                         user_id: user.id)
+                           user_id: user.id)
 
     visit edit_user_registration_path
 
@@ -129,7 +129,6 @@ feature 'User edit account' do
     fill_in 'user[facebook]', with: new_user.facebook
     fill_in 'user[twitter]', with: new_user.twitter
     check('Gaucha')
-
 
     click_on t('users.buttons.update')
 

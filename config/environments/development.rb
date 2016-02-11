@@ -15,11 +15,11 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'victor@gmail.com',
-    password:             'xxxx',
+    user_name:            'victor.muramoto@gmail.com',
+    password:             '2912@mura',
     authentication:       'plain',
     enable_starttls_auto: true  }
-
+  config.action_mailer.raise_delivery_errors = true
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false

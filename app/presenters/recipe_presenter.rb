@@ -14,23 +14,23 @@ class RecipePresenter < SimpleDelegator
   def check_destroy(user)
     if user == @recipe.user
       helpers.link_to t('recipes.buttons.destroy_recipe'),
-        recipe_path(recipe),
-        method: :delete, data: { confirm: "Are you sure?" }
+                      recipe_path(recipe),
+                      method: :delete, data: { confirm: 'Are you sure?' }
     end
   end
 
   def inject_favorite_option(user)
-   if user != nil
-     if @recipe.check_like?(user)
-       helpers.link_to t('recipes.buttons.like_recipe'),
-         like_recipe_path(recipe),
-         method: :post, data: { confirm: "Are you sure?" }
-     else
-       helpers.link_to t('recipes.buttons.unlike_recipe'),
-         unlike_recipe_path(recipe),
-         method: :post, data: { confirm: "Are you sure?" }
-     end
-   end
+    unless user.nil?
+      if @recipe.check_like?(user)
+        helpers.link_to t('recipes.buttons.like_recipe'),
+                        like_recipe_path(recipe),
+                        method: :post, data: { confirm: 'Are you sure?' }
+      else
+        helpers.link_to t('recipes.buttons.unlike_recipe'),
+                        unlike_recipe_path(recipe),
+                        method: :post, data: { confirm: 'Are you sure?' }
+      end
+    end
   end
 
   private

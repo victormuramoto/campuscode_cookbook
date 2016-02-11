@@ -30,3 +30,4 @@ pt-BR:
         destination_email: 'Email Destinatário'
         cancel: 'Cancelar'
         send: 'Enviar Email'
+        success: 'Email Enviado com sucesso'

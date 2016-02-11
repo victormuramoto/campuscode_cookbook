@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   before_action :remove_user_recipe, only: [:unlike]
   before_action :set_collections, only: [:new, :create, :edit, :update]
   before_action :check_user, only: [:edit, :update]
+  before_action :set_email, only: [:email]
 
   def show
   end
@@ -57,13 +58,17 @@ class RecipesController < ApplicationController
   end
 
   def email
-    @destination = params[:destination]
-    @recipe = Recipe.find(params[:id])
-    RecipeMailer.recipe_email(@recipe,@destination).deliver_now
+    RecipeMailer.recipe_email(@recipe, @destination).deliver_now
+    flash[:notice] = t('recipes.email.success')
     respond_with @recipe
   end
 
   private
+
+  def set_email
+    @destination = params[:destination]
+    @recipe = Recipe.find(params[:id])
+  end
 
   def set_recipe_presenter
     @recipe = RecipePresenter.new(Recipe.find(params[:id]))

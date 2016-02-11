@@ -19,7 +19,7 @@ end
 FactoryGirl.define do
   factory :kitchens_user do
     kitchen_id 1
-    user_id   1
+    user_id 1
   end
 end
 

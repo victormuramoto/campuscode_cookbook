@@ -3,7 +3,6 @@ class RecipeMailer < ApplicationMailer
 
   def recipe_email(recipe,destination)
     @recipe = recipe
-    byebug
     mail(to: destination,
          subject: "Cookbook - #{@recipe.name}")
   end

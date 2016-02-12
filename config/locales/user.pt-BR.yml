@@ -12,7 +12,6 @@ pt-BR:
         logout_admin: 'Sair'
         login_user: 'Entrar Como Usuário'
         login_admin: 'Entrar Como Administrator'
-
     fields:
       first_name: 'Primeiro Nome'
       last_name: 'Último Nome'
@@ -24,6 +23,7 @@ pt-BR:
       password: 'Senha'
       minimum_password: 'Caracteres mínimos'
       confirm_password: 'Confirme Sua Senha'
+      my_recipes: 'Minhas Receitas'
     buttons:
       sign_up: 'Cadastrar'
       update: 'Atualizar'

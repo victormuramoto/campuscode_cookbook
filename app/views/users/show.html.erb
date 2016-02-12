@@ -1,14 +1,34 @@
+<%= link_to t('users.menu.links.back'), :back %>
 <span class="notice_message"><%= flash[:notice] %></span>
-<p><%= t('users.fields.first_name') %>: <%= @user.first_name %></p>
-<p><%= t('users.fields.last_name') %>: <%= @user.last_name %></p>
-<p><%= t('users.fields.email') %>: <%= @user.email %></p>
-<p><%= t('users.fields.city') %>: <%= @user.city %></p>
-<p><%= t('users.fields.facebook') %>: <%= @user.facebook %></p>
-<p><%= t('users.fields.twitter') %>: <%= @user.twitter %></p>
-
-<p><%= t('users.fields.kitchens') %>: </p>
-<% @kitchens.each do |kitchen| %>
-  <p><%= kitchen.name %></p>
-<% end %>
-
-<%= render @user.recipes %>
+<div class="container">
+  <div class="row" id="user-row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+      <section id="user-info">
+        <div class="user-name">
+          <p><%= t('users.fields.first_name') %>: <%= @user.first_name %></p>
+          <p><%= t('users.fields.last_name') %>: <%= @user.last_name %></p>
+        </div>
+        <div class="user-address">
+          <p><%= t('users.fields.email') %>: <%= @user.email %></p>
+          <p><%= t('users.fields.city') %>: <%= @user.city %></p>
+        </div>
+        <div class="user-social">
+          <p><%= t('users.fields.facebook') %>: <%= @user.facebook %></p>
+          <p><%= t('users.fields.twitter') %>: <%= @user.twitter %></p>
+        </div>
+        <p class="kitchen-title"><%= t('users.fields.kitchens') %>: </p>
+        <div class="user-kitchens">
+          <% @kitchens.each do |kitchen| %>
+            <%= kitchen.name %>
+          <% end %>
+      </div>
+      </section>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<section id="user-recipes ">
+  <p class="user-my-recipes title"><%= t('users.fields.my_recipes') %></p>
+  <%= render @user.recipes %>
+</section>

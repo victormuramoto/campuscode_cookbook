@@ -27,7 +27,10 @@ RSpec.describe RecipeMailer, type: :mailer do
                      kitchen: kitchen,
                      user: user
     end
-    let(:mail) { RecipeMailer.recipe_email(recipe, 'victor.muramoto@gmail.com') }
+    let(:mail) do
+      RecipeMailer
+        .recipe_email(recipe, 'victor.muramoto@gmail.com')
+    end
 
     it 'renders the subject' do
       expect(mail.subject).to eql("Cookbook - #{recipe.name}")

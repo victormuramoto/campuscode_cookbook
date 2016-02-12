@@ -21,6 +21,7 @@ en:
       password: 'Password'
       minimum_password: 'characters minimum'
       confirm_password: 'Password Confirmation'
+      my_recipes: 'My Recipes'
     buttons:
       sign_up: 'Sign up'
       update: 'Update'

@@ -1,7 +1,7 @@
 require 'rails_helper'
 feature 'User creates a recipe' do
   scenario 'success' do
-    user = login_user
+    login_user
 
     visit edit_user_registration_path
 

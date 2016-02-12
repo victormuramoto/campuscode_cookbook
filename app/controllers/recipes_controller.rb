@@ -55,6 +55,7 @@ class RecipesController < ApplicationController
       'INNER JOIN user_recipes ON recipes.id = user_recipes.recipe_id
        INNER JOIN users ON user_recipes.user_id = users.id')
                            .where("users.id = #{current_user.id}")
+    respond_with @liked_recipes
   end
 
   def email

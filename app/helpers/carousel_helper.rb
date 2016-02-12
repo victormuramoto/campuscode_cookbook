@@ -1,7 +1,7 @@
 module CarouselHelper
   def carousel_for(recipes)
     Carousel.new(self, recipes).html
-end
+  end
 
   class Carousel
     attr_accessor :uid
@@ -20,7 +20,12 @@ end
 
     attr_accessor :view, :recipes
 
-    delegate :link_to, :content_tag, :image_tag, :attachment_url, :safe_join, to: :view
+    delegate :link_to,
+             :content_tag,
+             :image_tag,
+             :attachment_url,
+             :safe_join,
+             to: :view
 
     def indicators
       items = recipes.count.times.map { |index| indicator_tag(index) }
@@ -40,7 +45,9 @@ end
     end
 
     def slides
-      items = recipes.map.with_index { |recipe, index| slide_tag(recipe, index.zero?) }
+      items = recipes.map
+      .with_index { |recipe, index| slide_tag(recipe, index.zero?) }
+      
       content_tag(:div, safe_join(items), class: 'carousel-inner')
     end
 

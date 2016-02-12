@@ -15,7 +15,7 @@ feature 'User see other users profile' do
     expect(page).to have_content recipe.user.twitter
   end
   scenario 'success with login' do
-    user = login_user
+    login_user
     recipe = create(:recipe, user: create(:user,
                                           first_name: 'Joao',
                                           last_name: 'Das Neves',
@@ -35,7 +35,7 @@ feature 'User see other users profile' do
     expect(page).to have_content recipe.user.twitter
   end
   scenario 'show kitchens' do
-    user = login_user
+    login_user
     kitchen1 = create(:kitchen, name: 'Paulista')
     kitchen2 = create(:kitchen, name: 'Gaucha')
     kitchen3 = create(:kitchen, name: 'Nordestina')
@@ -68,7 +68,7 @@ feature 'User see other users profile' do
     expect(page).to have_content kitchen3.name
   end
   scenario 'show all recipes' do
-    user = login_user
+    login_user
     recipe = create(:recipe, user: create(:user,
                                           first_name: 'Joao',
                                           last_name: 'Das Neves',
@@ -89,8 +89,8 @@ feature 'User see other users profile' do
 
     user_owner = recipe.user
 
-    user_owner.recipes.each do |recipe|
-      expect(page).to have_content recipe.name
+    user_owner.recipes.each do |r|
+      expect(page).to have_content r.name
     end
   end
 end

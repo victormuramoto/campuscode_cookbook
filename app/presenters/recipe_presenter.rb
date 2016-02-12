@@ -7,10 +7,6 @@ class RecipePresenter < SimpleDelegator
     __setobj__(recipe)
   end
 
-  def eql?(target)
-    target == self || recipe.eql?(target)
-  end
-
   def check_edit(user)
     if user == @recipe.user
       helpers.link_to t('recipes.buttons.edit_recipe'),

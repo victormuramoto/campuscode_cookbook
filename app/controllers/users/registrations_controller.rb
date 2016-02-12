@@ -40,18 +40,34 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :city, :facebook, :twitter, kitchen_ids: [])
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :email,
+                                 :password,
+                                 :password_confirmation,
+                                 :city,
+                                 :facebook,
+                                 :twitter,
+                                 kitchen_ids: [])
   end
 
   def account_update_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :city, :facebook, :twitter, kitchen_ids: [])
+    params.require(:user).permit(:first_name,
+                                 :last_name,
+                                 :email,
+                                 :password,
+                                 :password_confirmation,
+                                 :city,
+                                 :facebook,
+                                 :twitter,
+                                 kitchen_ids: [])
   end
 
   protected
 
   def update_resource(resource, params)
     resource.update_without_password(params)
- end
+  end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)

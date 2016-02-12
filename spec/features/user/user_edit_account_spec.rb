@@ -29,7 +29,7 @@ feature 'User edit account' do
     fill_in 'user[city]', with: new_user.city
     fill_in 'user[facebook]', with: new_user.facebook
     fill_in 'user[twitter]', with: new_user.twitter
-    check('Gaucha')
+    check(kitchen2.name)
 
     click_on t('users.buttons.update')
 
@@ -37,12 +37,18 @@ feature 'User edit account' do
 
     visit edit_user_registration_path
 
-    expect(page).to have_field(t('users.fields.first_name'), with: new_user.first_name)
-    expect(page).to have_field(t('users.fields.last_name'), with: new_user.last_name)
-    expect(page).to have_field(t('users.fields.city'), with: new_user.city)
-    expect(page).to have_field(t('users.fields.facebook'), with: new_user.facebook)
-    expect(page).to have_field(t('users.fields.twitter'), with: new_user.twitter)
-    expect(page).to have_field(t('users.fields.email'), with: new_user.email)
+    expect(page).to have_field(t('users.fields.first_name'),
+                               with: new_user.first_name)
+    expect(page).to have_field(t('users.fields.last_name'),
+                               with: new_user.last_name)
+    expect(page).to have_field(t('users.fields.city'),
+                               with: new_user.city)
+    expect(page).to have_field(t('users.fields.facebook'),
+                               with: new_user.facebook)
+    expect(page).to have_field(t('users.fields.twitter'),
+                               with: new_user.twitter)
+    expect(page).to have_field(t('users.fields.email'),
+                               with: new_user.email)
     expect(find('#user_kitchen_ids_2')).to be_checked
     expect(find('#user_kitchen_ids_1')).to be_checked
     expect(find('#user_kitchen_ids_3')).to_not be_checked
@@ -89,11 +95,16 @@ feature 'User edit account' do
 
     visit edit_user_registration_path
 
-    expect(page).to have_field(t('users.fields.first_name'), with: new_user.first_name)
-    expect(page).to have_field(t('users.fields.last_name'), with: new_user.last_name)
-    expect(page).to have_field(t('users.fields.city'), with: new_user.city)
-    expect(page).to have_field(t('users.fields.facebook'), with: new_user.facebook)
-    expect(page).to have_field(t('users.fields.twitter'), with: new_user.twitter)
+    expect(page).to have_field(t('users.fields.first_name'),
+                               with: new_user.first_name)
+    expect(page).to have_field(t('users.fields.last_name'),
+                               with: new_user.last_name)
+    expect(page).to have_field(t('users.fields.city'),
+                               with: new_user.city)
+    expect(page).to have_field(t('users.fields.facebook'),
+                               with: new_user.facebook)
+    expect(page).to have_field(t('users.fields.twitter'),
+                               with: new_user.twitter)
     expect(page).to have_field(t('users.fields.email'), with: new_user.email)
     expect(find('#user_kitchen_ids_2')).to_not be_checked
     expect(find('#user_kitchen_ids_1')).to_not be_checked
@@ -128,7 +139,7 @@ feature 'User edit account' do
     fill_in 'user[city]', with: new_user.city
     fill_in 'user[facebook]', with: new_user.facebook
     fill_in 'user[twitter]', with: new_user.twitter
-    check('Gaucha')
+    check(kitchen2.name)
 
     click_on t('users.buttons.update')
 

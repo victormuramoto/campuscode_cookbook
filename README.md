@@ -5,27 +5,24 @@
 * This is a website project created using Ruby on Rails  
 * This project is focused in a social network for food recipes
 
-## Gemfile
+## Gemfile - Main gems used in project
 
-  TESTS
-    * FactoryGirl
-    * Capybara
-    * Rspec
-    * Byebug
-    * Simplecov
-    * Pry
-    * Rubocop
-
-  PRODUCTION
-    * Refile
-    * Responders
-    * Bootstrap
-    * Devise
+* FactoryGirl
+* Capybara
+* Rspec
+* Byebug
+* Simplecov
+* Pry
+* Rubocop
+* Refile
+* Responders
+* Bootstrap
+* Devise
 
 
-  ## Getting started
+## Getting started
 
-  This is a simple project, so you just need to run the bundle install and enjoy!  
+This is a simple project, so you just need to run the bundle install and enjoy!  
   ```console
   bundle install
   ```
